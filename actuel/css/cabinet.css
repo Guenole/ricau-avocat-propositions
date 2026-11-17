@@ -1,0 +1,725 @@
+/* =========================================================
+   Page « Le cabinet » (site actuel de Julie Ricau, refait pour Webflow).
+   Mesures relevées sur ricau-avocat.fr/le-cabinet le 17/11/2026 :
+   ordinateur 1440 px, mobile 390 px (sous 991 px).
+   Groupes que Canva réduit d'un bloc sur mobile (cartes « Nos engagements »,
+   étapes de la méthode, cartes de la zone d'intervention) : écrits en em
+   sur une base de 10 px (1em = 1 px du design à 1440 ÷ 10) ; sur mobile,
+   seule la taille de base change.
+   ========================================================= */
+
+/* Couleurs propres à cette page (variables Webflow à créer) */
+:root {
+  --cabinet-beige: #d8c1a3;
+  --cabinet-brun-titre: #563a1e;
+  --cabinet-brun-bio: #544029;
+  --cabinet-brun-carte: #462c16;
+  --cabinet-brun-sombre: #442d1a;
+  --cabinet-brun-gris: #92785d;
+  --cabinet-reseau: #b99d81;
+}
+
+/* ---------- Sections (Webflow : Section) ----------
+   Canva compose le texte en précision géométrique (le crénage est déjà coupé sur body dans commun.css) :
+   réglage hérité par tous les textes de la section (Webflow : propriété personnalisée de la classe). */
+.cabinet-section { position: relative; padding-top: 2.8937rem; background-color: var(--cabinet-beige); text-rendering: geometricPrecision; }
+.cabinet-section.is-fondatrice { padding-bottom: 1.385rem; }
+.cabinet-section.is-valeurs { padding-bottom: 2.7725rem; background-color: var(--taupe); }
+.cabinet-section.is-engagements { padding-bottom: 1.635rem; }
+.cabinet-section.is-methode { padding-bottom: 4.035rem; background-color: var(--taupe); }
+.cabinet-section.is-reseau { padding-bottom: 2.135rem; }
+.cabinet-section.is-zone { padding-bottom: 2.7325rem; background-color: var(--taupe); }
+
+/* ---------- Titre de section : filet + titre (groupe en em, base = taille du titre) ---------- */
+.cabinet-heading { display: flex; align-items: flex-start; margin-left: 5rem; font-size: 2.0375rem; }
+.cabinet-heading-line { flex: none; width: 2.4233em; height: 1px; margin-top: 0.5491em; background-color: var(--blanc); }
+.cabinet-heading-title {
+  margin-left: 0.5092em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.0129em;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+
+/* ---------- Icône « retour en haut » (Webflow : Link Block + Image) ---------- */
+.cabinet-back-top { display: block; width: 2.3438rem; height: 2.2625rem; }
+.cabinet-back-top.is-valeurs { margin-top: 1.45rem; margin-left: 82rem; }
+.cabinet-back-top.is-engagements { margin-top: 0; margin-left: 82.5563rem; }
+.cabinet-back-top.is-methode { margin-top: 0.1906rem; margin-left: 81.9313rem; }
+.cabinet-back-top.is-reseau { margin-top: 2.05rem; margin-left: 83rem; }
+.cabinet-back-top.is-zone { margin-top: 1.5063rem; margin-left: 81.7188rem; }
+.cabinet-back-top-icon { width: 100%; height: 100%; }
+
+/* =========================================================
+   La fondatrice
+   ========================================================= */
+.cabinet-founder-name {
+  width: 60.3rem;
+  margin-top: 2.1362rem;
+  margin-left: 14.7875rem;
+  color: var(--cabinet-brun-titre);
+  font-family: var(--dream);
+  font-size: 7.2962rem;
+  font-weight: 400;
+  line-height: 10.1994rem;
+  letter-spacing: -0.017em;
+  text-align: center;
+}
+.cabinet-founder-tagline {
+  width: 60.3rem;
+  margin-top: -2.3431rem;
+  margin-left: 16.85rem;
+  color: var(--cabinet-brun-titre);
+  font-family: var(--codec);
+  font-size: 2.8269rem;
+  font-weight: 300;
+  line-height: 2.8744rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.cabinet-founder-tagline-strong { font-weight: 700; }
+
+/* Deux colonnes : portrait + coordonnées / présentation */
+.cabinet-founder { display: flex; align-items: flex-start; margin-top: 5.3194rem; margin-left: 3.1187rem; }
+.cabinet-founder-aside { flex: none; width: 30.3438rem; }
+.cabinet-founder-photo { width: 22.9rem; height: 34.3438rem; margin-left: 7.4437rem; object-fit: cover; }
+
+/* Coordonnées, boutons, icônes (groupe réduit à 0,83 par Canva) */
+.cabinet-contact { display: flex; align-items: flex-start; margin-top: 1.9937rem; }
+.cabinet-contact-main { flex: none; width: 26.7rem; padding-top: 1.0375rem; }
+.cabinet-contact-lines { display: flex; flex-direction: column; align-items: flex-end; padding-right: 1.1125rem; }
+.cabinet-contact-line {
+  color: var(--creme-chaud);
+  font-family: var(--codec);
+  font-size: 1.4988rem;
+  font-weight: 300;
+  line-height: 1.5012rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-contact-line.is-email { margin-top: 0.2675rem; }
+.cabinet-contact-line.is-address { margin-top: 0.2675rem; font-weight: 100; }
+.cabinet-contact-buttons { display: flex; gap: 1.1938rem; margin-top: 0.8056rem; }
+.cabinet-button {
+  display: flex;
+  height: 2.95rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.1125rem;
+  border-radius: 0.5175rem;
+  background-color: var(--brun-fonce);
+  color: var(--creme-chaud);
+  font-family: var(--codec);
+  font-size: 1.1663rem;
+  font-weight: 800;
+  line-height: 1.6044rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cabinet-button.is-contact { width: 12.8812rem; }
+.cabinet-button.is-rdv { width: 11.85rem; }
+.cabinet-contact-side { display: flex; align-items: flex-start; }
+.cabinet-contact-divider { flex: none; width: 2px; height: 7.825rem; background-color: var(--sable); }
+.cabinet-contact-icons { display: flex; flex-direction: column; align-items: flex-start; }
+.cabinet-contact-avocat { display: block; width: 1.7188rem; height: 2.8125rem; margin-top: 0.825rem; margin-left: 1.5063rem; }
+.cabinet-contact-avocat-image { width: 100%; height: 100%; }
+.cabinet-contact-linkedin { display: block; width: 2.3188rem; height: 2.3188rem; margin-top: 0.9313rem; margin-left: 1.2063rem; }
+.cabinet-contact-linkedin-image { width: 100%; height: 100%; }
+
+/* Présentation */
+.cabinet-founder-text { flex: none; width: 44.0375rem; margin-left: 2.675rem; padding-top: 0.0625rem; }
+.cabinet-founder-role {
+  color: var(--cabinet-brun-bio);
+  font-family: var(--codec);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+.cabinet-founder-role-strong { font-weight: 700; }
+
+/* Biographie (Webflow : Rich Text ; gras = strong, gras appuyé 800 = em) */
+.cabinet-bio {
+  margin-top: 1.25rem;
+  margin-bottom: -1.3125rem;
+  color: var(--cabinet-brun-bio);
+  font-family: var(--codec);
+  font-size: 1.3331rem;
+  font-weight: 300;
+  line-height: 1.3125rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-bio p { margin-bottom: 1.3125rem; white-space: pre-wrap; }
+.cabinet-bio ul { margin-top: -1.3125rem; margin-bottom: 1.3125rem; padding-left: 2.2687rem; list-style-type: disc; }
+.cabinet-bio li { white-space: pre-wrap; }
+.cabinet-bio strong { font-weight: 700; }
+.cabinet-bio em { font-style: normal; font-weight: 800; }
+
+/* « Plus qu'un conseil » et domaines */
+.cabinet-motto {
+  width: 82.75rem;
+  margin-top: 3.2125rem;
+  margin-left: 3.55rem;
+  color: var(--cabinet-brun-titre);
+  font-family: var(--codec);
+  font-size: 2.8262rem;
+  font-weight: 300;
+  line-height: 2.8537rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.cabinet-motto-strong { font-weight: 700; }
+.cabinet-domains-line { width: 29rem; height: 1px; margin-top: 4.2213rem; margin-left: 58.6875rem; background-color: var(--blanc); }
+.cabinet-domains {
+  width: 25.2875rem;
+  margin-top: 1.075rem;
+  margin-left: 61.4312rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 1.6638rem;
+  font-weight: 300;
+  line-height: 1.6638rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: right;
+  white-space: nowrap;
+}
+.cabinet-domains-sub {
+  width: 37.55rem;
+  margin-top: 0.3962rem;
+  margin-left: 49.1688rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 1.6619rem;
+  font-weight: 100;
+  line-height: 1.6619rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: right;
+}
+
+/* =========================================================
+   Nos valeurs : croix de filets
+   ========================================================= */
+.cabinet-values { display: flex; align-items: flex-start; margin-top: 0.2988rem; margin-left: 20.5188rem; }
+.cabinet-values-column { display: flex; flex: none; width: 23.3875rem; flex-direction: column; align-items: flex-end; }
+.cabinet-values-column.is-right { margin-left: 1.0625rem; align-items: flex-start; }
+.cabinet-values-divider { flex: none; width: 1px; height: 23.3875rem; margin-left: 1.0625rem; background-color: var(--blanc); }
+.cabinet-values-word {
+  margin-top: 5.5312rem;
+  margin-right: 0.8187rem;
+  color: var(--creme);
+  font-family: var(--codec);
+  font-size: 3.3287rem;
+  font-weight: 400;
+  line-height: 3.3706rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-values-word.is-right { margin-right: 0; margin-left: 0.625rem; }
+.cabinet-values-word.is-second { margin-top: 1.2281rem; }
+.cabinet-values-rule { width: 100%; height: 1px; margin-top: 1.6075rem; background-color: var(--blanc); }
+
+/* =========================================================
+   Nos engagements : cartes sur fond texturé (groupe en em, base 10 px)
+   ========================================================= */
+.cabinet-commitments { display: flex; width: 68.8375rem; flex-wrap: wrap; column-gap: 2.3625rem; row-gap: 1.9812rem; margin-top: 2.4362rem; margin-left: 11.2063rem; }
+.cabinet-commitment {
+  position: relative;
+  overflow: hidden;
+  width: 53.18em;
+  height: 20.69em;
+  padding-top: 4em;
+  padding-left: 1.66em;
+  border-radius: 1.2em;
+  font-size: 0.625rem;
+}
+.cabinet-commitment.is-clarte { height: 21.38em; margin-left: -0.13em; padding-top: 3.66em; padding-left: 1.79em; }
+.cabinet-commitment.is-transparence { height: 21.38em; padding-top: 3.66em; }
+/* Texture « mur beige usé » à 43 % (Webflow : Image en absolu dans la carte) */
+.cabinet-commitment-texture { position: absolute; max-width: none; opacity: 0.43; object-fit: cover; }
+.cabinet-commitment-texture.is-ecoute { top: -0.45em; left: -5.5em; width: 58.68em; height: 39.15em; }
+.cabinet-commitment-texture.is-reactivite { top: -14.85em; left: 0; width: 58.68em; height: 39.15em; }
+.cabinet-commitment-texture.is-clarte { top: -17.99em; left: -0.15em; width: 59.01em; height: 39.38em; }
+.cabinet-commitment-texture.is-transparence { top: -3.61em; left: 0; width: 58.68em; height: 39.15em; }
+.cabinet-commitment-title {
+  position: relative;
+  margin-left: 0.1384em;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 4.264em;
+  font-weight: 700;
+  line-height: 1.0077;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-commitment-list { position: relative; margin-top: -0.11em; list-style-type: none; }
+.cabinet-commitment-item { display: flex; align-items: flex-start; margin-top: 0.159em; }
+.cabinet-commitment-bar { flex: none; width: 1px; height: 1.6em; margin-top: 0.23em; margin-right: 0.74em; background-color: var(--creme-chaud); opacity: 0.7; }
+.cabinet-commitment-bar.is-full { opacity: 1; }
+.cabinet-commitment-text {
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.325em;
+  font-weight: 300;
+  line-height: 0.9897;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   Notre méthode de travail : étapes 1 à 6 (chaque étape en em, base 10 px)
+   ========================================================= */
+.cabinet-steps { margin-top: 3.6425rem; list-style-type: none; }
+.cabinet-step { display: flex; align-items: flex-start; font-size: 0.625rem; }
+.cabinet-step.is-1 { margin-left: 19.2375rem; }
+.cabinet-step.is-2 { margin-top: 1.7594rem; margin-left: 18.4625rem; }
+.cabinet-step.is-3 { margin-top: 2.4719rem; margin-left: 18.5rem; }
+.cabinet-step.is-4 { margin-top: 2.4969rem; margin-left: 18.2188rem; }
+.cabinet-step.is-5 { margin-top: 2.4969rem; margin-left: 18.5188rem; }
+.cabinet-step.is-6 { margin-top: 2.8156rem; margin-left: 18.4812rem; }
+/* Chiffres beiges (SVG recolorés par Canva) */
+.cabinet-step-number { flex: none; }
+.cabinet-step-number.is-1 { width: 4.9em; height: 9.08em; }
+.cabinet-step-number.is-2 { width: 7em; height: 8.13em; }
+.cabinet-step-number.is-3 { width: 6.87em; height: 8.13em; }
+.cabinet-step-number.is-4 { width: 7.77em; height: 7.93em; }
+.cabinet-step-number.is-5 { width: 6.81em; height: 8.06em; }
+.cabinet-step-number.is-6 { width: 6.94em; height: 8.07em; }
+.cabinet-step-content { flex: none; }
+.cabinet-step-content.is-1 { width: 79.47em; margin-top: 6.17em; margin-left: 1.44em; }
+.cabinet-step-content.is-2 { width: 79.41em; margin-top: 5.37em; margin-left: 0.58em; }
+.cabinet-step-content.is-3 { width: 79.81em; margin-top: 4.46em; margin-left: 0.65em; }
+.cabinet-step-content.is-4 { width: 79.37em; margin-top: 4.18em; margin-left: 0.2em; }
+.cabinet-step-content.is-5 { width: 80.39em; margin-top: 4.94em; margin-left: 0.68em; }
+.cabinet-step-content.is-6 { width: 81.26em; margin-top: 5.26em; margin-left: 0.61em; }
+.cabinet-step-title {
+  margin-bottom: 0.1704em;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 3.258em;
+  font-weight: 700;
+  line-height: 1.0131;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-step-text {
+  color: var(--cabinet-brun-titre);
+  font-family: var(--codec);
+  font-size: 2.134em;
+  font-weight: 300;
+  line-height: 0.9841;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+/* =========================================================
+   Notre réseau d'experts de confiance
+   ========================================================= */
+.cabinet-network-intro {
+  width: 79.1688rem;
+  margin-top: 3.1237rem;
+  margin-left: 4.9562rem;
+  color: var(--brun-fonce);
+  font-family: var(--codec);
+  font-size: 1.6856rem;
+  font-weight: 300;
+  line-height: 1.6869rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.cabinet-network { display: flex; align-items: flex-start; gap: 4.2812rem; margin-top: 3.2319rem; margin-left: 5.8312rem; }
+.cabinet-network-card { flex: none; width: 36.8188rem; height: 37.8062rem; padding-top: 2.8563rem; border-radius: 0.75rem; background-color: var(--cabinet-reseau); }
+.cabinet-network-card.is-single { background-color: var(--sable); }
+.cabinet-network-title {
+  width: 23.4187rem;
+  margin-left: 6.6437rem;
+  color: var(--cabinet-brun-sombre);
+  font-family: var(--codec);
+  font-size: 2.0344rem;
+  font-weight: 700;
+  line-height: 2.0606rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+  white-space: nowrap;
+}
+.cabinet-network-title.is-single { width: 24.875rem; margin-left: 6.0687rem; color: var(--cabinet-brun-carte); }
+.cabinet-network-text {
+  width: 33.925rem;
+  margin-left: 1.4438rem;
+  color: var(--cabinet-brun-sombre);
+  font-family: var(--codec);
+  font-size: 1.2688rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-network-text.is-certains { margin-top: 1.7706rem; }
+.cabinet-network-text.is-afin { margin-top: 2.1rem; }
+.cabinet-network-text.is-lorsque { margin-top: 2.2938rem; }
+.cabinet-network-text.is-cas { width: 33.3125rem; margin-top: 2.1437rem; margin-left: 1.9062rem; color: var(--cabinet-brun-carte); }
+.cabinet-network-text.is-force { width: 33.3125rem; margin-top: 3.5438rem; margin-left: 1.7563rem; color: var(--cabinet-brun-carte); }
+.cabinet-network-strong { font-weight: 700; }
+/* Pastilles des experts */
+.cabinet-network-chips { display: grid; grid-template-columns: repeat(3, 9.3187rem); grid-template-rows: 5.3563rem 5.4938rem; column-gap: 1.2937rem; row-gap: 1.15rem; margin-top: 1.2063rem; margin-left: 3.2156rem; list-style-type: none; }
+.cabinet-network-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.1562rem;
+  border-radius: 0.6875rem;
+  background-color: var(--sable);
+  color: var(--cabinet-brun-sombre);
+  font-family: var(--codec);
+  font-size: 1.27rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.cabinet-network-chip-light { font-weight: 400; }
+/* « Votre avocat demeure votre seul interlocuteur » et coches */
+.cabinet-network-lead {
+  margin-top: 2.85rem;
+  margin-left: 4.17rem;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 1.2694rem;
+  font-weight: 400;
+  line-height: 1.2506rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-network-checks { padding-top: 0.6994rem; margin-left: 3.925rem; list-style-type: none; }
+.cabinet-network-check { display: flex; align-items: flex-start; margin-top: 1.6187rem; }
+.cabinet-network-check-icon { flex: none; width: 2.2rem; height: 1.9688rem; margin-right: 0.8988rem; }
+.cabinet-network-check-text {
+  margin-top: 0.5312rem;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 1.27rem;
+  font-weight: 300;
+  line-height: 1.2512rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   Notre zone d'intervention
+   ========================================================= */
+.cabinet-zone-intro {
+  width: 67.6rem;
+  margin-top: 1.0675rem;
+  margin-left: 12.1875rem;
+  color: var(--brun-fonce);
+  font-family: var(--codec);
+  font-size: 1.685rem;
+  font-weight: 300;
+  line-height: 1.6869rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-zone-intro.is-second { width: 67.55rem; margin-top: 0.5506rem; margin-left: 12.2438rem; }
+.cabinet-zone-intro-strong { font-weight: 700; }
+.cabinet-zone { display: flex; align-items: flex-start; gap: 2.675rem; margin-top: 1.8144rem; margin-left: 10.85rem; }
+.cabinet-zone-column { display: flex; flex-direction: column; gap: 1.625rem; }
+
+/* Cartes (chacune en em, base 10 px) */
+.cabinet-zone-card { width: 54.44em; border-radius: 1.2em; background-color: var(--sable); font-size: 0.625rem; }
+.cabinet-zone-card.is-cabinet { width: 54.43em; height: 36.7em; padding-top: 4.21em; padding-left: 1.36em; }
+.cabinet-zone-card.is-distanciel { height: 55.97em; padding-top: 2.64em; padding-left: 1.47em; }
+.cabinet-zone-card.is-locaux { height: 56.91em; padding-top: 4.25em; padding-left: 1.75em; }
+.cabinet-zone-card.is-juridictions { height: 35.77em; padding-top: 3.42em; padding-left: 2.13em; }
+.cabinet-zone-title {
+  color: var(--cabinet-brun-sombre);
+  font-family: var(--codec);
+  font-size: 4.164em;
+  font-weight: 700;
+  line-height: 1.0086;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-zone-desc {
+  width: 27.0427em;
+  margin-top: 0.4059em;
+  color: var(--cabinet-brun-gris);
+  font-family: var(--codec);
+  font-size: 1.897em;
+  font-weight: 300;
+  line-height: 1.0016;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-zone-desc.is-distanciel { margin-top: 0.0791em; margin-left: 0.1054em; }
+.cabinet-zone-desc.is-locaux { margin-top: 0.3585em; margin-left: -0.0949em; }
+.cabinet-zone-desc.is-juridictions { margin-top: 0.2109em; }
+
+/* Au cabinet : gare, parking, routes */
+.cabinet-zone-access { list-style-type: none; }
+.cabinet-zone-access-item { display: flex; align-items: flex-start; }
+.cabinet-zone-access-item.is-gare { margin-top: 2.1em; }
+.cabinet-zone-access-item.is-parking { margin-top: 1.48em; }
+.cabinet-zone-access-item.is-route { margin-top: 2.44em; }
+.cabinet-zone-access-icon { flex: none; }
+.cabinet-zone-access-icon.is-gare { width: 3.24em; height: 3.13em; margin-top: 0.35em; margin-right: 1.95em; margin-left: 1.91em; }
+.cabinet-zone-access-icon.is-parking { width: 3.09em; height: 3.09em; margin-top: 0.4em; margin-right: 1.86em; margin-left: 1.99em; }
+.cabinet-zone-access-icon.is-route { width: 3.25em; height: 3.25em; margin-top: -0.49em; margin-right: 1.78em; margin-left: 1.99em; }
+.cabinet-zone-access-text {
+  width: 17.574em;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.432em;
+  font-weight: 300;
+  line-height: 0.9877;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+
+/* En distanciel : outils et badge */
+.cabinet-zone-tools { padding-top: 0.58em; list-style-type: none; }
+.cabinet-zone-tool { display: flex; align-items: center; margin-top: 2.3em; margin-left: 1.87em; }
+.cabinet-zone-tool.is-last { margin-top: 2.4em; }
+.cabinet-zone-tool-icon { flex: none; width: 3.52em; height: 3.15em; margin-right: 1.3em; }
+.cabinet-zone-tool-text {
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.432em;
+  font-weight: 800;
+  line-height: 0.9877;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+/* Badge « Accompagnement 100 % à distance » (Webflow : Link Block, forme SVG en image de fond) */
+.cabinet-zone-badge {
+  display: block;
+  width: 28.3em;
+  height: 6.12em;
+  margin-top: 1.74em;
+  margin-left: 11.57em;
+  padding-top: 0.74em;
+  background-image: url("../images/cabinet-badge-fond.svg");
+  background-position: 0 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.cabinet-zone-badge-text {
+  display: block;
+  margin-left: -0.04em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 2.43em;
+  font-weight: 800;
+  line-height: 0.9877;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Dans vos locaux : prestations avec flèche */
+.cabinet-zone-services { margin-top: -0.43em; list-style-type: none; }
+.cabinet-zone-service { display: flex; align-items: flex-start; margin-top: 3.42em; }
+.cabinet-zone-service.is-2 { margin-top: 3.443em; }
+.cabinet-zone-service.is-3 { margin-top: 3.443em; }
+.cabinet-zone-service.is-4 { margin-top: 3.482em; }
+.cabinet-zone-service-icon { flex: none; width: 2.8em; height: 2.87em; margin-top: 0.05em; margin-right: 1.84em; margin-left: -0.21em; }
+.cabinet-zone-service-body { flex: none; }
+.cabinet-zone-service-title {
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.564em;
+  font-weight: 700;
+  line-height: 1.014;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-zone-service-text {
+  width: 26.3039em;
+  margin-top: 0.2268em;
+  color: var(--cabinet-brun-titre);
+  font-family: var(--codec);
+  font-size: 1.764em;
+  font-weight: 300;
+  line-height: 0.9637;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-zone-service-text.is-first { margin-top: 0.1825em; }
+.cabinet-zone-service-text.is-large { width: 26.5249em; margin-top: 0.267em; }
+
+/* Devant les juridictions : puces (pastille dessinée, pour qu'elle suive la réduction mobile comme chez Canva) */
+.cabinet-zone-bullets {
+  padding-top: 0.0176em;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.564em;
+  font-weight: 700;
+  line-height: 1.014;
+  letter-spacing: var(--codec-interlettrage);
+  list-style-type: none;
+}
+.cabinet-zone-bullet { display: flex; align-items: flex-start; margin-top: 1.1408em; padding-left: 0.858em; }
+.cabinet-zone-bullet-dot { flex: none; width: 0.312em; height: 0.312em; margin-top: 0.4064em; margin-right: 0.53em; border-radius: 50%; background-color: currentColor; }
+
+/* Partout là où votre dossier l'exige (carte large ; contenu en em, base 10 px) */
+.cabinet-zone-wide { width: 70.4625rem; height: 17.95rem; margin-top: 1.6187rem; margin-left: 10.975rem; padding-top: 2.4188rem; padding-left: 2.175rem; border-radius: 0.75rem; background-color: var(--sable); }
+.cabinet-zone-wide-content { font-size: 0.625rem; }
+.cabinet-zone-wide-title {
+  color: var(--cabinet-brun-sombre);
+  font-family: var(--codec);
+  font-size: 4.165em;
+  font-weight: 700;
+  line-height: 1.0089;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.cabinet-zone-wide-desc {
+  width: 55.98em;
+  margin-top: 0.0832em;
+  color: var(--cabinet-brun-gris);
+  font-family: var(--codec);
+  font-size: 1.898em;
+  font-weight: 300;
+  line-height: 1.0016;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.cabinet-zone-wide-list {
+  padding-top: 0.0494em;
+  color: var(--cabinet-brun-carte);
+  font-family: var(--codec);
+  font-size: 2.431em;
+  font-weight: 400;
+  line-height: 0.9873;
+  letter-spacing: var(--codec-interlettrage);
+  list-style-type: none;
+}
+.cabinet-zone-wide-item { display: flex; align-items: flex-start; margin-top: 0.7034em; padding-left: 0.983em; }
+.cabinet-zone-wide-dot { flex: none; width: 0.288em; height: 0.288em; margin-top: 0.3472em; margin-right: 0.588em; border-radius: 50%; background-color: currentColor; }
+
+/* =========================================================
+   Mobile (mesures relevées à 390 px)
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  /* Sections */
+  .cabinet-section.is-fondatrice { padding-top: 2.3125rem; padding-bottom: 1.1019rem; }
+  .cabinet-section.is-valeurs { padding-top: 1.7625rem; padding-bottom: 2.2031rem; }
+  .cabinet-section.is-engagements { padding-top: 2.3125rem; padding-bottom: 1.2975rem; }
+  .cabinet-section.is-methode { padding-top: 2.2875rem; padding-bottom: 3.2175rem; }
+  .cabinet-section.is-reseau { padding-top: 2.0562rem; padding-bottom: 1.6994rem; }
+  .cabinet-section.is-zone { padding-top: 1.7063rem; padding-bottom: 2.1794rem; }
+
+  /* Titres de section : chaque groupe a sa propre réduction */
+  .cabinet-heading { margin-left: 0.975rem; }
+  .cabinet-heading.is-fondatrice { font-size: 1.6294rem; }
+  .cabinet-heading.is-valeurs { font-size: 0.7063rem; }
+  .cabinet-heading.is-engagements { font-size: 1.6281rem; }
+  .cabinet-heading.is-methode { font-size: 1.585rem; }
+  .cabinet-heading.is-reseau { font-size: 1.195rem; }
+  .cabinet-heading.is-zone { font-size: 0.6031rem; }
+
+  /* Retour en haut */
+  .cabinet-back-top { width: 1.875rem; height: 1.8062rem; }
+  .cabinet-back-top.is-valeurs { margin-top: 0.975rem; margin-left: 20.7rem; }
+  .cabinet-back-top.is-engagements { margin-top: 0.975rem; margin-left: 20.8375rem; }
+  .cabinet-back-top.is-methode { margin-top: 1.3rem; margin-left: 11.25rem; }
+  .cabinet-back-top.is-reseau { margin-top: 0.9688rem; margin-left: 20.9438rem; }
+  .cabinet-back-top.is-zone { margin-top: 0.975rem; margin-left: 20.625rem; }
+
+  /* La fondatrice */
+  .cabinet-founder-name { width: 24.7625rem; margin-top: 1.4431rem; margin-left: -1.075rem; font-size: 2.9969rem; line-height: 4.1894rem; }
+  .cabinet-founder-tagline { width: 24.3125rem; margin-top: -0.9706rem; margin-left: 0; font-size: 1.1612rem; line-height: 1.1806rem; }
+  .cabinet-founder { flex-direction: column; margin-top: 1.5506rem; margin-left: 0; }
+  .cabinet-founder-aside { width: 100%; }
+  .cabinet-founder-photo { width: 18.3188rem; height: 27.4688rem; margin-left: 5.0812rem; }
+  .cabinet-contact { flex-direction: column; margin-top: 1.8062rem; margin-left: 1.8188rem; }
+  .cabinet-contact-main { width: 20.7375rem; padding-top: 0; }
+  .cabinet-contact-lines { padding-right: 0.2687rem; }
+  .cabinet-contact-line { font-size: 1.1987rem; line-height: 1.2006rem; }
+  .cabinet-contact-line.is-email { margin-top: 0.2119rem; }
+  .cabinet-contact-line.is-address { margin-top: 0.2119rem; }
+  .cabinet-contact-buttons { gap: 0.9563rem; margin-top: 0.6494rem; }
+  .cabinet-button { height: 2.3563rem; padding-bottom: 0.0875rem; border-radius: 0.4125rem; font-size: 0.9325rem; line-height: 1.2825rem; }
+  .cabinet-button.is-contact { width: 10.3rem; }
+  .cabinet-button.is-rdv { width: 9.4812rem; }
+  .cabinet-contact-side { margin-top: 0.975rem; margin-left: 8.8938rem; }
+  .cabinet-contact-divider { height: 6.2625rem; }
+  .cabinet-contact-avocat { width: 1.375rem; height: 2.25rem; margin-top: 0.6625rem; margin-left: 1.1938rem; }
+  .cabinet-contact-linkedin { width: 1.85rem; height: 1.85rem; margin-top: 0.7438rem; margin-left: 0.9563rem; }
+  .cabinet-founder-text { width: 22.425rem; margin-top: 1.025rem; margin-left: 0.975rem; padding-top: 0; }
+  .cabinet-founder-role { font-size: 1.5994rem; line-height: 1.5994rem; }
+  .cabinet-bio { margin-top: 1.0019rem; margin-bottom: -1.05rem; font-size: 1.0656rem; line-height: 1.05rem; }
+  .cabinet-bio p { margin-bottom: 1.05rem; }
+  .cabinet-bio ul { margin-top: -1.05rem; margin-bottom: 1.05rem; padding-left: 1.8125rem; }
+  .cabinet-motto { width: 22.425rem; margin-top: 1.0938rem; margin-left: 0.9125rem; font-size: 2.26rem; line-height: 2.2812rem; }
+  .cabinet-domains-line { width: 22.425rem; margin-top: 1.225rem; margin-left: 0.975rem; }
+  .cabinet-domains { width: 20.225rem; margin-top: 0.8562rem; margin-left: 3.1063rem; font-size: 1.3306rem; line-height: 1.3306rem; }
+  .cabinet-domains-sub { width: 30.0375rem; margin-top: 0.3144rem; margin-left: -6.8375rem; font-size: 1.3288rem; line-height: 1.3288rem; }
+
+  /* Nos valeurs */
+  .cabinet-values { margin-top: 0.1094rem; margin-left: 6.3625rem; }
+  .cabinet-values-column { width: 8.1188rem; }
+  .cabinet-values-column.is-right { margin-left: 0.35rem; }
+  .cabinet-values-divider { height: 8.1188rem; margin-left: 0.3438rem; }
+  .cabinet-values-word { margin-top: 1.9187rem; margin-right: 0.2875rem; font-size: 1.1556rem; line-height: 1.17rem; }
+  .cabinet-values-word.is-right { margin-left: 0.2188rem; }
+  .cabinet-values-word.is-second { margin-top: 0.4062rem; }
+  .cabinet-values-rule { margin-top: 0.5363rem; }
+
+  /* Nos engagements : cartes empilées, chacune réduite d'un bloc */
+  .cabinet-commitments { width: auto; flex-direction: column; flex-wrap: nowrap; row-gap: 0.9731rem; margin-top: 1.9569rem; margin-left: 1.0375rem; }
+  .cabinet-commitment { font-size: 0.4205rem; }
+  .cabinet-commitment.is-clarte { font-size: 0.4215rem; }
+  .cabinet-commitment.is-transparence { font-size: 0.4138rem; }
+
+  /* Méthode : chiffres alignés à gauche, chaque étape réduite d'un bloc */
+  .cabinet-steps { margin-top: 2.02rem; }
+  .cabinet-step.is-1 { margin-left: 0.975rem; font-size: 0.2579rem; }
+  .cabinet-step.is-2 { margin-top: 1.0913rem; margin-left: 0.975rem; font-size: 0.2536rem; }
+  .cabinet-step.is-3 { margin-top: 1.3037rem; margin-left: 0.975rem; font-size: 0.2533rem; }
+  .cabinet-step.is-4 { margin-top: 1.3031rem; margin-left: 0.975rem; font-size: 0.2531rem; }
+  .cabinet-step.is-5 { margin-top: 1.3088rem; margin-left: 0.975rem; font-size: 0.2516rem; }
+  .cabinet-step.is-6 { margin-top: 1.3044rem; margin-left: 0.975rem; font-size: 0.2492rem; }
+
+  /* Réseau : cartes et pastilles empilées */
+  .cabinet-network-intro { width: 21.0437rem; margin-top: 2.1587rem; margin-left: 1.6313rem; font-size: 1.2637rem; line-height: 1.265rem; }
+  .cabinet-network { flex-direction: column; gap: 0.975rem; margin-top: 1.7875rem; margin-left: 0.975rem; }
+  .cabinet-network-card { width: 22.425rem; height: 52.2563rem; padding-top: 2.0187rem; }
+  .cabinet-network-card.is-single { height: 29.6187rem; padding-top: 2.2812rem; }
+  .cabinet-network-title { width: 13.5625rem; margin-left: 4.4rem; font-size: 1.1781rem; line-height: 1.1931rem; }
+  .cabinet-network-title.is-single { width: 19.8938rem; margin-left: 1.2437rem; font-size: 1.6287rem; line-height: 1.6494rem; }
+  .cabinet-network-text { width: 19.3875rem; margin-left: 1.5188rem; font-size: 0.9606rem; line-height: 0.9469rem; }
+  .cabinet-network-text.is-certains { width: 19.6438rem; margin-top: 1.0256rem; margin-left: 1.3875rem; font-size: 0.7344rem; line-height: 0.725rem; }
+  .cabinet-network-text.is-afin { margin-top: 1.65rem; }
+  .cabinet-network-text.is-lorsque { margin-top: 1.7688rem; }
+  .cabinet-network-text.is-cas { width: 19.3875rem; margin-top: 1.6812rem; margin-left: 1.5188rem; }
+  .cabinet-network-text.is-force { width: 19.3875rem; margin-top: 2.0375rem; margin-left: 1.5188rem; }
+  .cabinet-network-chips { display: flex; flex-direction: column; gap: 0.975rem; margin-top: 0.7875rem; margin-left: 7.4875rem; }
+  .cabinet-network-chip { width: 7.4562rem; height: 4.2812rem; padding-bottom: 0.125rem; border-radius: 0.55rem; font-size: 1.0156rem; line-height: 1rem; }
+  .cabinet-network-chip.is-justice { height: 4.3937rem; margin-top: -0.05rem; }
+  .cabinet-network-chip.is-postulants { height: 4.1875rem; font-size: 0.9663rem; line-height: 0.95rem; }
+  .cabinet-network-chip.is-specialistes { height: 4.3937rem; margin-top: 0.4625rem; }
+  .cabinet-network-lead { margin-top: 2.1437rem; margin-left: 1.705rem; font-size: 0.9675rem; line-height: 0.9531rem; }
+  .cabinet-network-checks { padding-top: 0.5281rem; margin-left: 0.975rem; }
+  .cabinet-network-check { margin-top: 1.2875rem; }
+  .cabinet-network-check-icon { width: 1.7563rem; height: 1.575rem; margin-right: 0.7181rem; }
+  .cabinet-network-check-icon.is-last { width: 1.5875rem; height: 1.425rem; margin-right: 0.6488rem; }
+  .cabinet-network-check-text { margin-top: 0.425rem; font-size: 1.0156rem; line-height: 1.0006rem; }
+  .cabinet-network-check-text.is-last { margin-top: 0.3875rem; font-size: 0.9181rem; line-height: 0.9044rem; }
+
+  /* Zone d'intervention : cartes empilées, chacune réduite d'un bloc */
+  .cabinet-zone-intro { width: 20.0125rem; margin-top: 0.3137rem; margin-left: 3.1063rem; font-size: 0.499rem; line-height: 0.4995rem; }
+  .cabinet-zone-intro.is-second { width: 20rem; margin-top: 0.1631rem; margin-left: 3.1187rem; line-height: 0.5rem; }
+  .cabinet-zone { flex-direction: column; gap: 0.975rem; margin-top: 0.9062rem; margin-left: 0; }
+  .cabinet-zone-column { gap: 0.975rem; }
+  .cabinet-zone-card.is-cabinet { margin-left: 1.375rem; font-size: 0.4046rem; }
+  .cabinet-zone-card.is-distanciel { margin-left: 1.3313rem; font-size: 0.4054rem; }
+  .cabinet-zone-card.is-locaux { margin-left: 1.2188rem; font-size: 0.4074rem; }
+  .cabinet-zone-card.is-juridictions { margin-left: 1.0625rem; font-size: 0.4098rem; }
+  .cabinet-zone-wide { width: 22.425rem; height: 6.625rem; margin-top: 0.975rem; margin-left: 0.975rem; padding-top: 1.1562rem; padding-left: 1.4125rem; }
+  .cabinet-zone-wide-content { font-size: 0.1868rem; }
+}

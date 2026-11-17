@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vos besoins, notre expertise • Julie Ricau, avocat d’affaires à Carcassonne</title>
+  <meta name="description" content="Création, structuration, développement, transmission, litige ou difficulté : à chaque étape de votre entreprise, Julie Ricau, avocate d’affaires à Carcassonne, vous accompagne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/monogramme-rond.png" type="image/png">
+  <link href="css/ricau.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bascule.css">
+</head>
+<body class="body">
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+  <!-- Composant « Navbar » : Navbar native Webflow (menu burger dès 991px) -->
+  <div class="navbar" role="banner">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="Ricau Avocat, accueil">
+        <img src="images/logo-ricau-avocat.svg" alt="" class="navbar-logo" width="261" height="132">
+      </a>
+      <nav class="navbar-menu" id="menu-principal" aria-label="Navigation principale">
+        <a href="index.html" class="navbar-link">Accueil</a>
+        <a href="vos-besoins--notre-expertise.html" class="navbar-link is-current" aria-current="page">Vos besoins • Notre expertise</a>
+        <a href="le-cabinet.html" class="navbar-link">Le cabinet</a>
+        <a href="contact--rdv.html" class="navbar-link">Contact</a>
+        <a href="contact--rdv.html#agenda" class="button is-light is-small">Prendre RDV</a>
+      </nav>
+      <!-- Webflow : bouton placé hors du menu repliable, à côté du bouton menu -->
+      <a href="contact--rdv.html#agenda" class="button is-light is-small navbar-rdv">RDV</a>
+      <button class="navbar-burger" type="button" aria-label="Ouvrir le menu" aria-controls="menu-principal" aria-expanded="false">
+        <span class="navbar-burger-line"></span>
+        <span class="navbar-burger-line"></span>
+        <span class="navbar-burger-line"></span>
+      </button>
+    </div>
+  </div>
+
+
+  <main id="contenu" tabindex="-1">
+
+    <!-- En-tête de page (même composant que les pages de service) -->
+    <section class="page-hero">
+      <div class="container is-page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html" class="breadcrumb-link">Accueil</a>
+          </nav>
+          <h1 class="page-hero-title">Vos besoins.<br><strong>Notre expertise.</strong></h1>
+          <p class="page-hero-lead">Partenaire des entrepreneurs en mouvement : droit des affaires, conseil et contentieux, à chaque étape de votre entreprise.</p>
+          <div class="page-hero-actions">
+            <a href="contact--rdv.html#agenda" class="button is-light">Prendre RDV</a>
+            <a href="#lancement" class="button is-outline">Trouver mon besoin</a>
+          </div>
+        </div>
+        <!-- Webflow : Div Block qui recadre la photo pendant qu’elle se pose (animation de chargement) -->
+        <div class="page-hero-media">
+          <img src="images/accueil-escalier.jpg" alt="Personne montant un escalier dans une architecture contemporaine aux lignes courbes" class="page-hero-image" width="1536" height="1024">
+        </div>
+      </div>
+    </section>
+
+    <!-- Accès direct aux étapes (collant sous la navigation) -->
+    <nav class="stage-nav" aria-label="Étapes de l’entrepreneur">
+      <div class="container">
+        <div class="stage-nav-list">
+          <a href="#lancement" class="stage-nav-link">Lancement</a>
+          <a href="#structuration" class="stage-nav-link">Structuration</a>
+          <a href="#essor" class="stage-nav-link">Essor</a>
+          <a href="#transition" class="stage-nav-link">Transition</a>
+          <a href="#litige" class="stage-nav-link">Litige</a>
+          <a href="#difficulte" class="stage-nav-link">Difficulté</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="stage" id="lancement">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-lancement.jpg" alt="Intérieur lumineux aux lignes courbes avec arbre décoratif" class="stage-image" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en lancement</strong></h2>
+            <p class="stage-motto">Créer.<br>Se lancer.<br>Oser.</p>
+            <div class="needs-list">
+              <a href="creer-votre-entreprise.html" class="needs-link"><span class="needs-link-text">Créer votre entreprise • Passer en société</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="racheter-une-entreprise.html" data-cmp-absente="../actuel/racheter-une-entreprise.html" class="needs-link"><span class="needs-link-text">Racheter une entreprise</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="structuration">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-structuration.jpg" alt="Architecture intérieure minimaliste aux formes courbes et tons naturels" class="stage-image is-right" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en structuration</strong></h2>
+            <p class="stage-motto">Organiser.<br>Sécuriser.<br>Pérenniser.</p>
+            <div class="needs-list">
+              <a href="securiser-vos-locaux-et-votre-bail.html" data-cmp-absente="../actuel/securiser-vos-locaux-et-votre-bail.html" class="needs-link"><span class="needs-link-text">Sécuriser vos locaux et votre bail</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="valoriser-vos-actifs-immatriels.html" data-cmp-absente="../actuel/valoriser-vos-actifs-immatriels.html" class="needs-link"><span class="needs-link-text">Valoriser vos actifs immatériels <span class="needs-link-detail">Propriété intellectuelle</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="encadrer-vos-relations-clients.html" data-cmp-absente="../actuel/encadrer-vos-relations-clients.html" class="needs-link"><span class="needs-link-text">Encadrer vos relations clients</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="piloter-et-adapter-vos-contrats.html" data-cmp-absente="../actuel/piloter-et-adapter-vos-contrats.html" class="needs-link"><span class="needs-link-text">Formaliser, piloter et adapter vos contrats</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="faire-evoluer-votre-societe.html" data-cmp-absente="../actuel/faire-evoluer-votre-societe.html" class="needs-link"><span class="needs-link-text">Faire évoluer et piloter votre société</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="essor">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-essor.jpg" alt="Intérieur contemporain minimaliste aux formes arrondies et aux tons beiges" class="stage-image" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en essor</strong></h2>
+            <p class="stage-motto">Développer.<br>Valoriser.<br>Investir.</p>
+            <div class="needs-list">
+              <a href="vous-associer-ouvrir-votre-capital.html" data-cmp-absente="../actuel/vous-associer-ouvrir-votre-capital.html" class="needs-link"><span class="needs-link-text">Vous associer • Ouvrir et financer votre capital</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="batir-un-groupe-restructurer-votre-capital.html" data-cmp-absente="../actuel/batir-un-groupe-restructurer-votre-capital.html" class="needs-link"><span class="needs-link-text">Bâtir un groupe • Restructurer votre capital</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="creer-votre-entreprise.html" class="needs-link"><span class="needs-link-text">Créer votre entreprise • Passer en société <span class="needs-link-detail">Entreprise individuelle ‣ société</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="transition">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-transition.jpg" alt="Architecture contemporaine géométrique aux volumes épurés" class="stage-image is-right" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en transition</strong></h2>
+            <p class="stage-motto">Transformer.<br>Évoluer.<br>Transmettre.</p>
+            <div class="needs-list">
+              <a href="faire-evoluer-votre-societe.html" data-cmp-absente="../actuel/faire-evoluer-votre-societe.html" class="needs-link"><span class="needs-link-text">Faire évoluer et piloter votre société <span class="needs-link-detail">Modifications &amp; transformations</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="vous-associer-ouvrir-votre-capital.html" data-cmp-absente="../actuel/vous-associer-ouvrir-votre-capital.html" class="needs-link"><span class="needs-link-text">Vous associer • Ouvrir et financer votre capital</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="vendre-votre-entreprise-transmettre-votre-entreprise.html" data-cmp-absente="../actuel/vendre-votre-entreprise-transmettre-votre-entreprise.html" class="needs-link"><span class="needs-link-text">Vendre ou transmettre votre entreprise</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="piloter-et-adapter-vos-contrats.html" data-cmp-absente="../actuel/piloter-et-adapter-vos-contrats.html" class="needs-link"><span class="needs-link-text">Formaliser, piloter et adapter vos contrats</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="litige">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-litige.jpg" alt="Intérieur contemporain à la lumière naturelle et aux volumes géométriques évoquant un banc de juridiction" class="stage-image" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en litige</strong></h2>
+            <p class="stage-motto">Anticiper.<br>Défendre.<br>Solutionner.</p>
+            <div class="needs-list">
+              <a href="faire-face-a-des-impayes-recouvrer-une-creance.html" data-cmp-absente="../actuel/faire-face-a-des-impayes-recouvrer-une-creance.html" class="needs-link"><span class="needs-link-text">Faire face à des impayés • Recouvrer une créance</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="vous-defendre-en-cas-de-contentieux.html" data-cmp-absente="../actuel/vous-defendre-en-cas-de-contentieux.html" class="needs-link"><span class="needs-link-text">Vous défendre en cas de contentieux <span class="needs-link-detail">Résiliation, concurrence déloyale, dommages-intérêts…</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="sauvegarder-vos-interets-apres-une-vente.html" data-cmp-absente="../actuel/sauvegarder-vos-interets-apres-une-vente.html" class="needs-link"><span class="needs-link-text">Sauvegarder vos intérêts après une vente <span class="needs-link-detail">Mise en jeu de GAP, clause de non-concurrence…</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="gerer-un-conflit-ou-un-blocage-entre-associes.html" data-cmp-absente="../actuel/gerer-un-conflit-ou-un-blocage-entre-associes.html" class="needs-link"><span class="needs-link-text">Gérer un conflit entre associés ou avec le dirigeant</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="difficulte">
+      <div class="container">
+        <div class="stage-layout">
+          <img src="images/vignette-difficulte.jpg" alt="Architecture intérieure aux tons beige clair et aux lignes courbes, évoquant un retournement" class="stage-image is-right" width="800" height="800" loading="lazy">
+          <div class="stage-content">
+            <h2 class="stage-title">Entrepreneurs <strong>en difficulté</strong></h2>
+            <p class="stage-motto">Prévenir.<br>Redresser.<br>Se réinventer.</p>
+            <div class="needs-list">
+              <a href="faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" data-cmp-absente="../actuel/faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" class="needs-link"><span class="needs-link-text">Prévenir les difficultés • Faire face à une procédure collective <span class="needs-link-detail">Mandat ad hoc, conciliation, sauvegarde, redressement, liquidation</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="defendre-ses-interets-face-a-un-debiteur-en-procedure-collective.html" data-cmp-absente="../actuel/defendre-ses-interets-face-a-un-debiteur-en-procedure-collective.html" class="needs-link"><span class="needs-link-text">Défendre ses intérêts face à un débiteur en procédure collective</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="reprendre-une-difficult-ou-lun-de-ses-actifs.html" data-cmp-absente="../actuel/reprendre-une-difficult-ou-lun-de-ses-actifs.html" class="needs-link"><span class="needs-link-text">Reprendre une entreprise en difficulté <span class="needs-link-detail">ou l’un de ses actifs</span></span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact : photo du pied de page, coordonnées et rendez-vous -->
+    <section class="contact-band" aria-label="Prendre contact">
+      <!-- Webflow : élément natif « Background Video » (MP4 envoyé dans Webflow, bouton pause activé) -->
+      <div class="contact-band-video">
+        <video class="contact-band-video-file" autoplay muted loop playsinline poster="videos/degrade-brun-poster.jpg" aria-hidden="true">
+          <source src="videos/degrade-brun.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="contact-band-overlay"></div>
+      <button class="contact-band-pause" type="button" aria-label="Mettre en pause l’animation de fond" aria-pressed="false">
+        <img src="images/icone-pause.svg" alt="" class="contact-band-pause-icon" width="16" height="16">
+      </button>
+      <div class="container is-contact">
+        <div class="contact-band-content">
+          <h2 class="section-title is-contact">Prenons le temps<br><strong>d’échanger.</strong></h2>
+          <p class="contact-band-note">1er rendez-vous gratuit (30 min) • Premier échange sous 24 à 48h ouvrées</p>
+          <div class="contact-lines">
+            <a href="tel:+33612627140" class="contact-line">06 12 62 71 40</a>
+            <a href="mailto:julie@ricau-avocat.fr" class="contact-line">julie@ricau-avocat.fr</a>
+            <a href="https://share.google/Ud80712EC2RmkYdtM" class="contact-line is-address">1, av. Maréchal Foch, 11000 Carcassonne</a>
+          </div>
+          <div class="contact-actions">
+            <a href="contact--rdv.html#agenda" class="button is-light">Prendre RDV</a>
+            <a href="contact--rdv.html" class="button is-outline">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Composant « Pied de page » -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link"><img src="images/logo-julie-ricau-avocat.svg" alt="Julie Ricau, Avocat" class="footer-logo" width="356" height="116"></a>
+          <p class="footer-tagline">Partenaire des entrepreneurs <strong>en mouvement.</strong><br>Droit des affaires • Conseil &amp; contentieux</p>
+          <div class="footer-social">
+            <a href="https://consultation.avocat.fr/avocat-beziers/julie-ricau-57707.html" class="footer-social-link" aria-label="Profil de Julie Ricau sur avocat.fr"><img src="images/icone-avocat-fr.png" alt="" class="footer-social-icon is-avocat" width="34" height="34"></a>
+            <a href="https://fr.linkedin.com/in/julie-ricau-89a48bbb" class="footer-social-link" aria-label="Profil LinkedIn de Julie Ricau"><img src="images/icone-linkedin.svg" alt="" class="footer-social-icon" width="44" height="44"></a>
+          </div>
+        </div>
+        <nav class="footer-column" aria-label="Vos besoins">
+          <a href="vos-besoins--notre-expertise.html" class="footer-column-title">Vos besoins</a>
+          <a href="vos-besoins--notre-expertise.html#lancement" class="footer-link">Entrepreneurs en lancement</a>
+          <a href="vos-besoins--notre-expertise.html#structuration" class="footer-link">Entrepreneurs en structuration</a>
+          <a href="vos-besoins--notre-expertise.html#essor" class="footer-link">Entrepreneurs en essor</a>
+          <a href="vos-besoins--notre-expertise.html#transition" class="footer-link">Entrepreneurs en transition</a>
+          <a href="vos-besoins--notre-expertise.html#litige" class="footer-link">Entrepreneurs en litige</a>
+          <a href="vos-besoins--notre-expertise.html#difficulte" class="footer-link">Entrepreneurs en difficulté</a>
+        </nav>
+        <nav class="footer-column" aria-label="Notre expertise">
+          <a href="vos-besoins--notre-expertise.html" class="footer-column-title">Notre expertise</a>
+          <a href="creer-votre-entreprise.html" class="footer-link">Droit des sociétés</a>
+          <a href="piloter-et-adapter-vos-contrats.html" data-cmp-absente="../actuel/piloter-et-adapter-vos-contrats.html" class="footer-link">Droit des contrats</a>
+          <a href="encadrer-vos-relations-clients.html" data-cmp-absente="../actuel/encadrer-vos-relations-clients.html" class="footer-link">Droit commercial</a>
+          <a href="valoriser-vos-actifs-immatriels.html" data-cmp-absente="../actuel/valoriser-vos-actifs-immatriels.html" class="footer-link">Propriété intellectuelle</a>
+          <a href="vous-defendre-en-cas-de-contentieux.html" data-cmp-absente="../actuel/vous-defendre-en-cas-de-contentieux.html" class="footer-link">Contentieux des affaires</a>
+          <a href="faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" data-cmp-absente="../actuel/faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" class="footer-link">Procédures collectives</a>
+        </nav>
+        <div class="footer-column">
+          <a href="le-cabinet.html" class="footer-column-title">Le cabinet</a>
+          <a href="tel:+33612627140" class="footer-link">06 12 62 71 40</a>
+          <a href="mailto:julie@ricau-avocat.fr" class="footer-link">julie@ricau-avocat.fr</a>
+          <a href="https://share.google/Ud80712EC2RmkYdtM" class="footer-link">1, av. Maréchal Foch<br>11000 Carcassonne</a>
+          <a href="contact--rdv.html" class="footer-link">Nous contacter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-text">© 2026 Julie Ricau • Tous droits réservés</div>
+        <a href="mentions-lgales.html" class="footer-legal-link">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Prototype seulement : animations (dans Webflow : Interactions natives, voir ANIMATIONS-WEBFLOW.md) -->
+  <script src="js/animations-prototype.js" defer></script>
+
+  <!-- Prototype seulement : ouverture du menu mobile. Dans Webflow, la Navbar native le fait sans code. -->
+  <script>
+    document.querySelector('.navbar-burger').addEventListener('click', function () {
+      var menu = document.querySelector('.navbar-menu');
+      var ouvert = menu.classList.toggle('is-open');
+      this.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+    });
+  </script>
+
+  <!-- Comparaison des deux propositions (outil de présentation, hors Webflow) -->
+  <nav class="cmp-bascule" aria-label="Choisir la proposition">
+    <a class="cmp-segment" href="../actuel/vos-besoins--notre-expertise.html" data-cmp-ancres="menu-principal contenu lancement structuration essor transition litige difficulte">À l’identique</a>
+    <span class="cmp-segment is-actif" aria-current="page">Refonte</span>
+  </nav>
+  <div class="cmp-message" role="status" aria-live="polite" hidden></div>
+  <script src="../bascule.js" defer></script>
+</body>
+</html>

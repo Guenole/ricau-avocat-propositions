@@ -1,0 +1,104 @@
+/* =========================================================
+   Page « Contact • RDV » (contact--rdv.html)
+   Mesures relevées sur ricau-avocat.fr/contact--rdv le 17/11/2026 :
+   ordinateur 1440 px (valeurs par défaut), mobile 390 px (media query).
+   Règles Webflow : une classe par élément, classes combinées « is-… »,
+   aucune règle descendante. Fond beige #d8c1a3 : pas de variable commune.
+   ========================================================= */
+
+/* ---------- En-tête « Prenons le temps d'échanger. » (Section + Background Video) ---------- */
+/* Canva n'applique pas le crénage (kerning) : font-kerning: none sur chaque section (propriété héritée) */
+.contact-hero { position: relative; height: 15.4375rem; overflow: hidden; background-color: #d8c1a3; font-kerning: none; }
+/* Vidéo de texture papier (tournée en paysage 1280 × 722), recadrée en « cover », 46 % d'opacité comme sur Canva */
+.contact-hero-video { position: absolute; top: -12.4625rem; left: 0; width: 100%; height: 50.6688rem; object-fit: cover; opacity: 0.46; }
+/* Sur mobile, Canva affiche l'image fixe (affiche de la vidéo) à la place */
+.contact-hero-image { display: none; }
+.contact-hero-canvas { padding-top: 5.6375rem; }
+.contact-hero-title {
+  width: 85.375rem;
+  margin-left: 2.2rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 4.2569rem;
+  font-weight: 700;
+  line-height: 4.3125rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+
+/* ---------- Sections « Nous contacter » et « Prendre rendez-vous » ---------- */
+.contact-section { background-color: #d8c1a3; padding-bottom: 7.2938rem; font-kerning: none; }
+.contact-section.is-rdv { background-color: var(--taupe); padding-bottom: 5.1688rem; }
+
+/* Titre de section précédé d'un tiret */
+.contact-heading { display: flex; align-items: flex-start; margin-left: 5rem; padding-top: 2.8937rem; }
+.contact-heading-line { flex: none; width: 4.9375rem; height: 1px; margin-top: 1.1187rem; background-color: var(--blanc); }
+.contact-heading-title {
+  margin-left: 1.0375rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 2.0337rem;
+  font-weight: 300;
+  line-height: 2.06rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+
+/* Encadré de titre (« Formulaire de contact », « Prise de rendez-vous en ligne ») */
+.contact-box { width: 45.0625rem; height: 6.1125rem; margin-top: 2.7338rem; margin-left: 22.4688rem; padding-top: 1.6625rem; border-radius: 0.3125rem; background-color: var(--sable); }
+.contact-box.is-rdv { width: 53.7938rem; margin-top: 2.7525rem; margin-left: 22.6125rem; background-color: var(--brun-fonce); }
+/* Canva décale le texte centré de la moitié de l'interlettrage vers la gauche (-1,1 px) */
+.contact-box-title {
+  margin-right: 0.0688rem;
+  margin-left: -0.0688rem;
+  color: var(--brun-texte);
+  font-family: var(--codec);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.contact-box-title.is-rdv { color: var(--blanc); font-size: 2.4987rem; line-height: 2.4987rem; }
+
+/* Formulaire Formester (Webflow : Embed). Canva affiche l'iframe 774 × 750 réduite à 93,15 % */
+.contact-embed { position: relative; width: 45.0625rem; height: 43.6562rem; margin-top: 2.4375rem; margin-left: 22.4688rem; overflow: hidden; }
+/* Bande beige posée par Canva par-dessus le haut du formulaire : elle masque l'image de logo vide (icône cassée) de Formester */
+.contact-embed-strip { position: absolute; top: 0; left: 0; z-index: 1; width: 44.2437rem; height: 1.175rem; background-color: var(--sable); }
+.contact-embed-iframe { position: relative; display: block; width: 48.375rem; height: 46.875rem; border: 0; transform: scale(0.93152); transform-origin: 0 0; }
+
+/* Aperçu de l'agenda cal.eu (image cliquable vers la prise de rendez-vous) */
+.contact-agenda-link { display: block; width: 53.7938rem; margin-top: 2.1562rem; margin-left: 22.6125rem; }
+.contact-agenda-image { width: 53.7938rem; height: 35.6063rem; border-radius: 0.3438rem; }
+
+/* =========================================================
+   Mobile (mesures relevées à 390 px)
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  .contact-hero { height: 19.1375rem; }
+  .contact-hero-video { display: none; }
+  /* Affiche de la vidéo (tournée en paysage 720 × 406), centrée */
+  .contact-hero-image { position: absolute; top: -14.15rem; left: 50%; display: block; width: 105.7625rem; max-width: none; height: 59.5438rem; margin-left: -52.8813rem; object-fit: cover; opacity: 0.46; }
+  .contact-hero-canvas { padding-top: 4.5062rem; }
+  .contact-hero-title { width: 22.425rem; margin-left: 0.8812rem; font-size: 3.4013rem; line-height: 3.4463rem; }
+
+  .contact-section { padding-bottom: 5.8187rem; }
+  .contact-section.is-rdv { padding-bottom: 4.125rem; }
+
+  .contact-heading { margin-left: 1.225rem; padding-top: 2.3125rem; }
+  .contact-heading.is-rdv { margin-left: 1.0875rem; padding-top: 2.3188rem; }
+  .contact-heading-line { width: 3.95rem; margin-top: 0.8938rem; }
+  .contact-heading-title { margin-left: 0.8313rem; font-size: 1.6262rem; line-height: 1.6475rem; }
+
+  .contact-box { width: 22.425rem; height: 4.7125rem; margin-top: 2.0463rem; margin-left: 0.975rem; padding-top: 1.2812rem; border-radius: 0.2062rem; }
+  .contact-box.is-rdv { width: 22.425rem; height: 6.2313rem; margin-top: 2.0394rem; margin-left: 0.975rem; padding-top: 1.225rem; }
+  .contact-box-title { margin-right: 0.0519rem; margin-left: -0.0519rem; font-size: 1.9187rem; line-height: 1.9187rem; }
+  .contact-box-title.is-rdv { width: 18.65rem; margin-right: 1.9375rem; margin-left: 1.8375rem; font-size: 1.82rem; line-height: 1.82rem; }
+
+  .contact-embed { width: 22.425rem; height: 21.725rem; margin-top: 0.975rem; margin-left: 0.975rem; }
+  .contact-embed-strip { width: 22.0188rem; height: 0.5875rem; }
+  .contact-embed-iframe { transform: scale(0.46357); }
+
+  .contact-agenda-link { width: 22.425rem; margin-top: 0.975rem; margin-left: 0.975rem; }
+  .contact-agenda-image { width: 22.425rem; height: 14.8438rem; border-radius: 0.125rem; }
+}

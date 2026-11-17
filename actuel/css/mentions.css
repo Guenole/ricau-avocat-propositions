@@ -1,0 +1,76 @@
+/* =========================================================
+   Page « Mentions légales » (mentions-lgales.html)
+   Mesures relevées sur ricau-avocat.fr/mentions-lgales le 17/11/2026.
+   Sur mobile, Canva réduit tout le bloc de texte d'un même facteur
+   (0,29914) : le bloc est donc écrit en em, avec 1em = 1px du design
+   à 1440 px, et seule la taille de base change sur mobile.
+   Règles Webflow : une classe par élément, classes combinées « is-… » ;
+   seules exceptions, les réglages des balises du Rich Text.
+   Fond beige #d8c1a3 : pas de variable commune.
+   ========================================================= */
+
+/* ---------- Section (Webflow : Section + Container « page-canvas legal-canvas ») ---------- */
+/* Canva n'applique pas le crénage (kerning) : sans cette règle, les lignes sont 0,5 % plus courtes et les retours à la ligne changent */
+.legal-section { background-color: #d8c1a3; font-kerning: none; }
+/* Taille de base : 1em = 1px à 1440 px */
+.legal-canvas { padding-top: 2.8937rem; padding-bottom: 1.3125rem; font-size: 0.0625rem; }
+
+/* ---------- Titre précédé d'un tiret ---------- */
+.legal-heading { display: flex; align-items: center; gap: 16.7em; margin-left: 80.8em; }
+/* Titres suivants : la marge basse du dernier paragraphe (23) + celle-ci = 22,2 */
+.legal-heading.is-next { margin-top: -0.8em; }
+/* Canva décale certains titres d'un pixel ou d'un demi-pixel vers la droite */
+.legal-heading.is-right { margin-left: 81.8em; }
+.legal-heading.is-right-half { margin-left: 81.3em; }
+.legal-heading-line { flex: none; width: 79em; height: 1px; margin-top: 3.8em; background-color: var(--blanc); }
+.legal-heading-title {
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 32.58em;
+  font-weight: 300;
+  line-height: 1.01289;
+  letter-spacing: var(--codec-interlettrage);
+}
+
+/* ---------- Blocs de texte (Div Block contenant un Rich Text) ---------- */
+/* Deux colonnes : éditeur du site / hébergeur */
+.legal-columns { display: flex; gap: 64.3em; margin-top: 30.6em; margin-left: 176.5em; }
+.legal-column { width: 519.3em; }
+.legal-column.is-hebergement { width: 507.1em; }
+/* Largeur relevée 1090,8 ; 1091,2 reproduit les retours à la ligne de Canva (sa largeur réelle est entre 1090,84 et 1091,8) */
+.legal-block { width: 1091.2em; margin-top: 30.6em; margin-left: 176.5em; }
+.legal-block.is-intro { margin-top: 6.2em; }
+/* Médiation, Loi applicable, Contact : texte plus proche du titre */
+.legal-block.is-close { margin-top: 14.7em; }
+/* Canva décale certains blocs d'un pixel ou d'un demi-pixel vers la gauche */
+.legal-block.is-left { margin-left: 175.4em; }
+.legal-block.is-left-half { margin-left: 176em; }
+
+/* ---------- Rich Text : texte justifié, une ligne blanche (23 px) entre paragraphes ---------- */
+.legal-richtext {
+  color: var(--brun-fonce);
+  font-family: var(--codec);
+  font-size: 22.97em;
+  font-weight: 300;
+  line-height: 1.0016;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.legal-richtext p { margin-bottom: 1.0014em; }
+/* Liste collée au paragraphe qui l'annonce (marge négative = marge du paragraphe) */
+.legal-richtext ul { margin-top: -1.0014em; margin-bottom: 1.0014em; padding-left: 0; list-style-type: none; text-align: left; }
+/* Puce dessinée en fond (point de 7,2 px à 1440) : la puce native de Chrome garde un écart fixe de 7 px et ne se réduit pas sur mobile comme celle de Canva */
+.legal-richtext li { padding-left: 1.6979em; background-image: radial-gradient(circle closest-side, var(--brun-fonce) 86%, rgba(101, 78, 54, 0) 100%); background-position: 0.8424em 0.3744em; background-repeat: no-repeat; background-size: 0.3135em 0.3135em; }
+/* Intitulés en gras léger (« Publication… », « Hébergement… ») */
+.legal-richtext strong { font-weight: 400; }
+/* Sous-titres soulignés : l'éditeur Rich Text de Webflow n'a pas de soulignement, on reprend l'italique (em) */
+.legal-richtext em { font-style: normal; text-decoration: underline; }
+.legal-richtext a { color: inherit; text-decoration: underline; }
+
+/* =========================================================
+   Mobile (390 px) : même bloc réduit à 0,29914, décalé de -8,6 px
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  /* Haut à 27,8 (relevé 27,3) : le texte tombe alors au même pixel que sur la capture */
+  .legal-canvas { margin-left: -0.5375rem; padding-top: 1.7375rem; padding-bottom: 1.3188rem; font-size: 0.0187rem; }
+}

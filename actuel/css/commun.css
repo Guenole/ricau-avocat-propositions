@@ -1,0 +1,330 @@
+/* =========================================================
+   Site actuel de Julie Ricau (Canva), refait pour Webflow.
+   Commun à toutes les pages : réglages, navigation, bandeau
+   « Prenons le temps d'échanger », pied de page.
+
+   Règles Webflow tenues : une classe par élément, classes
+   combinées « is-… », pas de règle descendante (sauf réglages
+   des balises d'un Rich Text, que Webflow permet), pas de
+   ::before / ::after, variables pour couleurs et polices.
+   Mesures relevées sur ricau-avocat.fr le 17/11/2026 :
+   ordinateur 1440 px, mobile 390 px.
+   ========================================================= */
+
+:root {
+  /* Couleurs relevées sur le site actuel */
+  --brun-nav: #5d4d38;
+  --brun-fonce: #654e36;
+  --brun-texte: #705436;
+  --taupe: #b9a289;
+  --sable: #ebd6bd;
+  --beige-logo: #d4c5b5;
+  --creme: #fffcf9;
+  --creme-chaud: #fffcf0;
+  --blanc-casse: #f8f5f1;
+  --gris-clair: #f2efeb;
+  --blanc: #ffffff;
+
+  /* Polices : Urbanist à la place de Codec Pro, Cormorant Garamond à la place de Dream Avenue (polices libres) */
+  --codec: "Urbanist", Arial, sans-serif;
+  --dream: "Cormorant Garamond", Georgia, serif; /* libre : remplace Dream Avenue pour les textes qui ne sont pas des logos */
+  --montserrat: "Montserrat", Arial, sans-serif;
+  --cormorant: "Cormorant Garamond", Georgia, serif;
+
+  /* Interlettrage de Codec Pro dans le design Canva */
+  --codec-interlettrage: -0.054em;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 1rem; -webkit-text-size-adjust: 100%; }
+
+/* Mise à l'échelle comme le site Canva : toutes les tailles sont en rem (1rem = 16 px à 1440 px et à 390 px).
+   Entre 992 et 1439 px, la page ordinateur se réduit proportionnellement ; au-dessus de 1440 px elle reste à 1440 px, centrée.
+   Sur mobile, la mise en page à 390 px suit la largeur, jusqu'à 20 px de base (tablettes), centrée.
+   Webflow : ces trois règles vont dans le code personnalisé du site (Site settings > Custom code > Head), dans une balise <style>. */
+@media screen and (min-width: 992px) and (max-width: 1439px) { html { font-size: calc(100vw / 90); } }
+@media screen and (max-width: 991px) { html { font-size: min(calc(100vw / 24.375), 20px); } }
+body {
+  margin: 0;
+  background-color: var(--taupe);
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-weight: 300;
+  font-kerning: none; /* Canva n'applique pas le crénage : sans cette règle, les textes sont plus étroits que sur le site actuel */
+  text-rendering: geometricPrecision; /* rendu du texte de Canva (coupures de lignes identiques) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, video { display: block; }
+a { color: inherit; text-decoration: none; }
+p, h1, h2, h3, h4, ul, ol { margin: 0; }
+ul, ol { padding: 0; }
+button { font: inherit; }
+
+/* Largeur du design Canva : 1440 px, centrée au-delà, fonds pleine largeur */
+.page-canvas { position: relative; width: 100%; max-width: 90rem; margin-right: auto; margin-left: auto; }
+@media screen and (max-width: 991px) { .page-canvas { max-width: 24.375rem; } }
+
+/* Accès au contenu au clavier */
+.skip-link {
+  position: absolute;
+  top: -6.25rem;
+  left: 1rem;
+  z-index: 300;
+  padding: 0.625rem 1rem;
+  background-color: var(--blanc);
+  color: var(--brun-fonce);
+  font-family: var(--codec);
+  font-weight: 400;
+}
+.skip-link:focus { top: 0.5rem; }
+
+/* ---------- Navigation (Webflow : Navbar) ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: 3.125rem;
+  background-color: var(--brun-nav);
+}
+.navbar-container { position: relative; display: flex; align-items: center; justify-content: space-between; height: 3.125rem; padding-right: 1rem; padding-left: 1rem; }
+.navbar-brand { display: block; width: 1.875rem; height: 1.875rem; }
+.navbar-monogram { width: 1.875rem; height: 1.875rem; }
+.navbar-menu { display: flex; align-items: center; gap: 1.5rem; }
+.navbar-link {
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 1.25rem;
+  font-weight: 100;
+  line-height: 1.75rem;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity 200ms ease;
+}
+.navbar-link:hover { opacity: 1; }
+.navbar-link.is-current { opacity: 1; }
+.navbar-burger { display: none; }
+.navbar-close { display: none; }
+.navbar-overlay { display: none; }
+
+/* Le site défile sous une barre fixe de 50 px */
+.main { display: block; }
+
+/* ---------- Mobile : menu en panneau à droite ---------- */
+@media screen and (max-width: 991px) {
+  .navbar-container { padding-right: 0.5rem; }
+  .navbar-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .navbar-burger-icon { width: 1.875rem; height: 1.875rem; }
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 210;
+    width: 19.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 2.8125rem;
+    padding-left: 1.75rem;
+    background-color: var(--brun-nav);
+    display: none;
+  }
+  .navbar-menu.is-open { display: flex; }
+  .navbar-link { padding-top: 1rem; padding-bottom: 1rem; opacity: 0.6; }
+  .navbar-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.875rem;
+    display: flex;
+    width: 1.875rem;
+    height: 1.875rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .navbar-close-icon { width: 1.375rem; height: 1.375rem; }
+  .navbar-overlay.is-open { position: fixed; inset: 0; z-index: 205; display: block; background-color: rgba(0, 0, 0, 0.3); }
+}
+
+/* =========================================================
+   En-tête logo des pages de service : « Ricau. » + filet + « AVOCAT »
+   ========================================================= */
+.logo-header { display: flex; align-items: flex-start; margin-left: 34.4937rem; padding-top: 1.6062rem; }
+/* Écart du site actuel : sur 3 pages (Créer, Racheter, Sécuriser) le logo est 8,7 px plus à droite et 18,5 px plus bas */
+.logo-header.is-bas { margin-bottom: -1.1562rem; margin-left: 35.0375rem; padding-top: 2.7625rem; }
+.logo-header-line { flex: none; width: 0.3125rem; height: 9.7rem; background-color: var(--blanc); }
+.logo-header-text { margin-top: -0.6562rem; margin-left: -0.1875rem; }
+.logo-header-name { display: block; width: 13.5938rem; height: auto; margin-top: 1.3938rem; margin-left: 1.8969rem; } /* « Ricau. » : logo en SVG */
+.logo-header-avocat {
+  width: 20.8625rem;
+  margin-top: 0.3875rem;
+  margin-left: 0.0875rem;
+  color: var(--beige-logo);
+  font-family: var(--montserrat);
+  font-size: 2.5994rem;
+  font-weight: 100;
+  line-height: 3.6031rem;
+  letter-spacing: 0.264em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   Bandeau « Prenons le temps d'échanger » (pages de service)
+   Webflow : Background Video (MP4), image à la place sur mobile
+   ========================================================= */
+/* Dans Canva, chaque section recouvre d'1 px la précédente : le pied de page remonte d'1 px sur le bandeau */
+.contact-band { position: relative; height: 48rem; overflow: hidden; margin-bottom: -0.0625rem; background-color: var(--sable); }
+.contact-band-video { position: absolute; top: -1.3rem; left: 0; width: 100%; height: 51.3rem; object-fit: cover; }
+.contact-band-image { display: none; }
+.contact-band-link { position: relative; display: block; padding-top: 17.6562rem; }
+.contact-band-title {
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 5.8887rem;
+  font-weight: 300;
+  line-height: 6rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+
+/* =========================================================
+   Pied de page (toutes les pages)
+   ========================================================= */
+.footer { position: relative; height: 48rem; overflow: hidden; background-color: var(--sable); }
+.footer-photo { position: absolute; top: 0; left: 50%; width: 90rem; max-width: none; height: 50.625rem; object-fit: cover; transform: translateX(-50%); }
+.footer-canvas { padding-top: 0.6438rem; }
+.footer-brand { display: block; width: 38.9813rem; margin-left: 44.1rem; }
+.footer-brand-name { display: block; width: 20.7656rem; height: auto; margin-top: 1.2781rem; margin-left: 9.4625rem; } /* « Julie Ricau » : logo en SVG */
+.footer-brand-avocat {
+  width: 38.9125rem;
+  margin-top: -0.4519rem;
+  margin-left: 0.4437rem;
+  color: var(--blanc);
+  font-family: var(--montserrat);
+  font-size: 2.4394rem;
+  font-weight: 100;
+  line-height: 3.3725rem;
+  letter-spacing: 0.2642em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer-tagline { display: flex; align-items: flex-start; height: 9.45rem; margin-top: 1.7563rem; margin-left: 40.6812rem; }
+.footer-line { flex: none; width: 3px; height: 9.45rem; background-color: var(--sable); }
+.footer-tagline-text { padding-top: 0.5563rem; padding-left: 1.3625rem; }
+.footer-tagline-title { color: var(--blanc); font-family: var(--codec); font-size: 2.0425rem; font-weight: 300; line-height: 2.0756rem; letter-spacing: var(--codec-interlettrage); white-space: nowrap; }
+.footer-tagline-title.is-strong { margin-top: 0.0312rem; font-weight: 400; }
+.footer-tagline-sub { margin-top: 0.6062rem; color: var(--creme-chaud); font-family: var(--codec); font-size: 1.7269rem; font-weight: 300; line-height: 1.7325rem; letter-spacing: var(--codec-interlettrage); white-space: nowrap; }
+.footer-tagline-sub.is-thin { margin-top: -0.175rem; font-weight: 100; }
+.footer-contact { display: flex; align-items: flex-start; height: 9.45rem; margin-top: -1.7312rem; margin-left: 43.75rem; }
+.footer-contact-lines { display: flex; width: 37.3375rem; flex-direction: column; align-items: flex-end; padding-top: 1.2563rem; }
+.footer-contact-line { color: var(--creme-chaud); font-family: var(--codec); font-size: 1.8094rem; font-weight: 300; line-height: 1.8125rem; letter-spacing: var(--codec-interlettrage); white-space: nowrap; }
+.footer-contact-line.is-email { margin-top: 0.3187rem; }
+.footer-contact-line.is-address { margin-top: 0.325rem; font-weight: 100; }
+.footer-line.is-contact { margin-left: 1.3188rem; }
+.footer-icons { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-icon-avocat { display: block; width: 2.075rem; height: 3.4rem; margin-top: 1rem; margin-left: 1.8rem; }
+.footer-icon-avocat-image { width: 2.075rem; height: 3.4rem; }
+.footer-icon-linkedin { display: block; width: 2.8rem; height: 2.8rem; margin-top: 1.1125rem; margin-left: 1.4375rem; }
+.footer-icon-linkedin-image { width: 2.8rem; height: 2.8rem; }
+.footer-actions { display: flex; gap: 1.4375rem; margin-top: -1.1375rem; margin-left: 50.2rem; }
+.button {
+  display: flex;
+  height: 3.5625rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  background-color: var(--brun-fonce);
+  color: var(--creme-chaud);
+  font-family: var(--codec);
+  font-size: 1.1663rem;
+  font-weight: 800;
+  line-height: 1.625rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.button.is-contact { width: 15.55rem; }
+.button.is-rdv { width: 14.3063rem; }
+.footer-columns { display: flex; margin-top: 1.7875rem; margin-left: 50.2875rem; }
+.footer-column { display: flex; width: 17.3375rem; flex-direction: column; align-items: flex-start; }
+.footer-column-title { color: var(--blanc); font-family: var(--montserrat); font-size: 1.0031rem; font-weight: 700; line-height: 1.3775rem; letter-spacing: 0.01em; }
+.footer-column-link { color: var(--blanc); font-family: var(--montserrat); font-size: 0.9575rem; font-weight: 300; line-height: 1.2219rem; letter-spacing: 0.01em; white-space: nowrap; }
+.footer-column-link.is-first { margin-top: -0.1rem; }
+.footer-column-strong { font-weight: 400; }
+.footer-legal { display: flex; width: 22rem; flex-direction: column; align-items: flex-end; margin-top: 3.575rem; margin-left: 65.3187rem; }
+.footer-legal-row { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+.footer-legal-line { width: 11.775rem; height: 1px; background-color: var(--gris-clair); }
+.footer-legal-link, .footer-copyright { color: var(--gris-clair); font-family: var(--montserrat); font-size: 1.0862rem; font-weight: 400; line-height: 1.5rem; letter-spacing: 0.01em; white-space: nowrap; }
+.footer-legal-link { margin-right: 0.1125rem; }
+.footer-copyright { margin-top: -0.0312rem; }
+
+/* =========================================================
+   Mobile (mesures relevées à 390 px) : en-tête logo, bandeau, pied de page
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  .logo-header { margin-left: 4.1437rem; padding-top: 1.2875rem; }
+  .logo-header.is-bas { margin-bottom: -0.9187rem; margin-left: 4.1937rem; padding-top: 2.2062rem; }
+  .logo-header-line { width: 0.25rem; height: 7.7562rem; }
+  .logo-header-text { margin-top: -0.525rem; margin-left: -0.4313rem; }
+  .logo-header-name { width: 10.8906rem; margin-top: 1.1438rem; margin-left: 1.5063rem; }
+  .logo-header-avocat { width: 16.6875rem; margin-top: 0.2875rem; margin-left: 0.0688rem; font-size: 2.0794rem; line-height: 2.8819rem; }
+
+  .contact-band { height: 38.3375rem; }
+  .contact-band-video { display: none; }
+  .contact-band-image { position: absolute; top: 0; left: 50%; display: block; width: 68.1875rem; max-width: none; height: 38.8687rem; object-fit: cover; transform: translateX(-50%); }
+  .contact-band-link { width: 18.55rem; margin-left: 2.8188rem; padding-top: 13.4563rem; }
+  .contact-band-title { font-size: 3.5956rem; line-height: 3.6356rem; }
+
+  .footer { height: 35.9375rem; }
+  .footer-photo { width: 68.2687rem; height: 38.4rem; }
+  .footer-canvas { padding-top: 0.5188rem; }
+  .footer-brand { width: 31.1812rem; margin-left: -2.55rem; }
+  .footer-brand-name { width: 16.6875rem; margin-top: 0.95rem; margin-left: 7.5656rem; }
+  .footer-brand-avocat { width: 31.125rem; margin-top: -0.3038rem; margin-left: 0.3563rem; font-size: 1.9512rem; line-height: 2.6975rem; }
+  .footer-tagline { height: 4.15rem; margin-top: 0.7775rem; margin-left: 2.125rem; }
+  .footer-line { width: 2px; height: 4.15rem; }
+  .footer-tagline-text { padding-top: 0.2437rem; padding-left: 0.5813rem; }
+  .footer-tagline-title { font-size: 0.8969rem; line-height: 0.9113rem; }
+  .footer-tagline-title.is-strong { margin-top: 0.0138rem; }
+  .footer-tagline-sub { margin-top: 0.27rem; font-size: 0.7581rem; line-height: 0.7612rem; }
+  .footer-tagline-sub.is-thin { margin-top: -0.08rem; }
+  .footer-contact { height: 4.15rem; margin-top: -0.7562rem; margin-left: 0; }
+  .footer-contact-lines { width: 19.8938rem; padding-top: 0.55rem; }
+  .footer-contact-line { font-size: 0.7944rem; line-height: 0.7956rem; }
+  .footer-contact-line.is-email { margin-top: 0.1419rem; }
+  .footer-contact-line.is-address { margin-top: 0.1419rem; }
+  .footer-line.is-contact { margin-left: 0.5625rem; }
+  .footer-icon-avocat { width: 0.9125rem; height: 1.4937rem; margin-top: 0.4062rem; margin-left: 0.7688rem; }
+  .footer-icon-avocat-image { width: 0.9125rem; height: 1.4937rem; }
+  .footer-icon-linkedin { width: 1.2312rem; height: 1.2312rem; margin-top: 0.5188rem; margin-left: 0.6125rem; }
+  .footer-icon-linkedin-image { width: 1.2312rem; height: 1.2312rem; }
+  .footer-actions { gap: 0.6312rem; margin-top: -0.5rem; margin-left: 6.3312rem; }
+  .button { height: 1.5625rem; border-radius: 0.275rem; font-size: 0.5125rem; line-height: 0.7125rem; }
+  .button.is-contact { width: 6.8312rem; }
+  .button.is-rdv { width: 6.2875rem; }
+  .footer-columns { flex-direction: column; margin-top: 0.8938rem; margin-left: 4.8187rem; }
+  .footer-column { width: auto; }
+  .footer-column.is-expertise { margin-top: 0.8187rem; }
+  .footer-column-title { font-size: 0.8025rem; line-height: 1.1019rem; }
+  .footer-column-link { font-size: 0.7656rem; line-height: 0.9775rem; }
+  .footer-column-link.is-first { margin-top: -0.1187rem; }
+  .footer-legal { width: 17.6rem; margin-top: 1.1313rem; margin-left: 4.8187rem; }
+  .footer-legal-line { width: 9.4187rem; }
+  .footer-legal-link, .footer-copyright { font-size: 0.8681rem; line-height: 1.1994rem; }
+  .footer-legal-link { margin-right: 0.0938rem; }
+  .footer-copyright { margin-top: -0.025rem; }
+}

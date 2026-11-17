@@ -1,0 +1,620 @@
+/* =========================================================
+   Pages de service (23 pages statiques sur un modèle commun)
+   Mesures du site actuel à 1440 px. Tailles en em (1em = 16 px
+   sur ordinateur) : sur mobile, Canva réduit des blocs entiers,
+   il suffit alors de changer la taille de base du bloc.
+   ========================================================= */
+.service { position: relative; overflow: hidden; margin-bottom: -0.0625rem; background-color: var(--taupe); font-size: 1rem; }
+/* Dans Canva, chaque section recouvre d'1 px la précédente : le bandeau remonte d'1 px sur la section */
+
+/* Encadré du titre (Webflow : Div Block + Heading 1) */
+.service-title-box { width: 80.3188em; height: 6.5375em; margin-top: 3.4563em; margin-left: 5.4313em; padding-top: 1.3875em; padding-left: 0.6625em; border-radius: 0.75em; background-color: var(--brun-fonce); }
+.service-title-box.is-deux-lignes { height: 9.3125em; padding-top: 1.3438em; padding-right: 1.1438em; padding-left: 0.6688em; }
+.service-title-box.is-decale { padding-top: 1.5813em; padding-left: 1.2563em; }
+.service-title { color: var(--creme); font-family: var(--codec); font-size: 3.3333em; font-weight: 400; line-height: 1.0125; letter-spacing: var(--codec-interlettrage); }
+.service-title.is-deux-lignes { text-align: justify; }
+
+/* Rangée : introduction à gauche, encadrés à droite */
+.service-layout { display: flex; align-items: flex-start; margin-top: 3.4625em; }
+.service-intro-col { flex: none; width: 29.1313em; margin-left: 5.4313em; padding-top: 0.1813em; }
+
+/* Introduction (Webflow : Rich Text ; lignes vides = paragraphes vides, comme dans Canva) */
+.service-intro { color: var(--blanc-casse); font-family: var(--cormorant); font-size: 2em; font-style: italic; font-weight: 500; line-height: 1; letter-spacing: var(--codec-interlettrage); text-align: justify; }
+.service-intro.is-regulier { font-weight: 400; }
+.service-intro p { margin: 0; }
+
+.service-separator { height: 1px; margin-top: 3.1813em; background-color: var(--blanc); }
+.service-button { display: flex; width: 12.2669em; height: 3.0547em; align-items: center; justify-content: center; margin-top: 3.4298em; margin-left: 5.4555em; border-radius: 0.5359em; background-color: var(--brun-fonce); color: var(--blanc); font-family: var(--codec); font-size: 1.1663em; font-weight: 800; line-height: 1.3934; text-transform: uppercase; white-space: nowrap; }
+
+/* Encadrés de contenu (hauteur fixe, comme dans Canva) */
+.service-cards { flex: none; width: 48.3063em; margin-left: 2.8813em; }
+.service-card { display: flex; flex-direction: column; align-items: flex-start; border-radius: 0.4375em; background-color: var(--sable); }
+.service-card.is-clair { background-color: #ecdac1; }
+
+/* Étiquette blanche en haut à droite d'un encadré (« Domaines d'intervention »), avec son filet */
+.service-card-label { display: flex; align-items: flex-start; justify-content: space-between; }
+.service-card-label-line { flex: none; height: 1px; background-color: var(--blanc); }
+.service-card-label-text { color: var(--blanc); font-family: var(--codec); font-size: 1.6667em; font-weight: 300; line-height: 1.0125; letter-spacing: var(--codec-interlettrage); text-align: right; white-space: nowrap; }
+
+/* Texte des encadrés (Webflow : Rich Text)
+   H2 = intitulé à coche ; gras = strong ; texte léger = italique (em) ;
+   lignes vides = paragraphes vides ; lien vers une autre page = citation (blockquote) contenant le lien. */
+.service-richtext { color: var(--brun-texte); font-family: var(--codec); font-size: 1.6667em; font-weight: 300; line-height: 1.0125; letter-spacing: var(--codec-interlettrage); text-align: justify; }
+.service-richtext.is-fonce { color: #462c16; }
+.service-richtext.is-sombre { color: #544029; }
+.service-richtext.is-clair { color: #976f43; }
+.service-richtext.is-tres-fonce { color: #442d1a; }
+.service-richtext.is-left { text-align: left; }
+.service-richtext.is-center { text-align: center; }
+.service-richtext.is-right { text-align: right; }
+.service-richtext p { margin: 0; }
+.service-richtext h2 { margin: -0.18em 0 0 -2.07em; padding: 0.18em 0 0 2.07em; background-image: url("../images/coche-encadre.png"); background-position: 0 0; background-repeat: no-repeat; background-size: 1.32em 1.1813em; font-size: 1em; font-weight: inherit; line-height: inherit; }
+.service-richtext.is-coche-gris h2 { background-image: url("../images/coche-encadre-gris.png"); }
+.service-richtext strong { font-weight: 800; }
+.service-richtext em { font-style: normal; font-weight: 100; }
+.service-richtext ul { margin: 0; padding-left: 1.6988em; }
+.service-richtext li { margin: 0; }
+.service-richtext blockquote { margin: 0; padding: 0; border: 0; background-image: url("../images/fleche-pastille.svg"); background-repeat: no-repeat; background-size: 0.9488em 0.9713em; font-size: 1em; line-height: inherit; text-align: left; }
+.service-richtext a { position: relative; top: -0.0875em; padding: 0.1583em 0.25em 0.05em 0.125em; border-radius: 0.25em; background-color: var(--brun-fonce); color: var(--blanc); font-size: 0.9em; font-weight: 400; line-height: 1; white-space: nowrap; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* « Vos autres besoins. » : texte surligné en brun, lien vers la page des besoins */
+.service-more { display: flex; justify-content: flex-end; padding-right: 4em; }
+.service-more-link { padding: 0.1213em 0.1434em 0.0772em 0.0529em; border-radius: 0.2426em; background-color: var(--brun-fonce); color: var(--blanc); font-family: var(--codec); font-size: 2.8338em; font-weight: 300; line-height: 1.0146; letter-spacing: var(--codec-interlettrage); white-space: nowrap; }
+
+
+/* =========================================================
+   Écarts propres à chaque page (reprise exacte du site Canva :
+   positions, hauteurs d’encadrés, retraits). Webflow : classes
+   combinées « is-<page> » sur les éléments concernés.
+   ========================================================= */
+
+/* Batir un groupe Restructurer votre capital */
+.service-intro-col.is-batir { padding-top: 0.9875em }
+.service-cards.is-batir { margin-left: 3.4875em; width: 47.7em }
+.service-card.is-batir { height: 56.4813em }
+.service-richtext.is-batir-1 { margin-top: 0.5175em; margin-left: 2.7525em; width: 25.1887em }
+.service-richtext.is-batir-2 { margin-top: 1.0125em; margin-left: 2.7525em; width: 25.1887em }
+.service-richtext.is-batir-2 h2 { margin-top: -0.1762em; margin-bottom: -0em; margin-left: -2.0737em; padding-top: 0.1762em; padding-bottom: 0em; padding-left: 2.0737em; background-position: 0 0em }
+.service-richtext.is-batir-2 blockquote { padding-left: 6.0525em; margin-top: -0em; margin-bottom: -0.3525em; padding-top: 0em; padding-bottom: 0.3525em; background-position: 4.9012em 0.3937em }
+.service-richtext.is-batir-2 a { top: 0.4708em }
+.service-richtext.is-batir-3 { margin-top: 1.0125em; margin-left: 2.7525em; width: 25.1887em; font-weight: 400 }
+.service-richtext.is-batir-3 ul { padding-left: 5.055em }
+.service-richtext.is-batir-3 ul { list-style-type: square }
+.service-richtext.is-batir-4 { margin-top: 1.0125em; margin-left: 2.7525em; width: 25.1887em }
+.service-richtext.is-batir-4 h2 { margin-top: -0em; margin-bottom: -0.4837em; margin-left: -2.0737em; padding-top: 0em; padding-bottom: 0.4837em; padding-left: 2.0737em; background-position: 0 0.315em }
+.service-richtext.is-batir-4 ul { padding-left: 1.68em }
+.service-more.is-batir { margin-top: 1.8688em; padding-bottom: 2.9688em; padding-right: 3.9375em }
+
+/* Creer votre entreprise */
+.service-title-box.is-creer { margin-top: 2.9938em; height: 7.4688em; padding-left: 1.0625em; padding-top: 1.85em }
+.service-layout.is-creer { margin-top: 2.9937em }
+.service-intro-col.is-creer { width: 28.775em }
+.service-card.is-creer { height: 39.3062em }
+.service-richtext.is-creer-1 { margin-top: 1.2862em; margin-left: 2.5837em; width: 26.4em }
+.service-richtext.is-creer-1 h2 { margin-top: -0.0769em; margin-bottom: -0.0919em; margin-left: -2.2162em; padding-top: 0.0769em; padding-bottom: 0.0919em; padding-left: 2.2162em; background-position: 0 0em }
+.service-richtext.is-creer-1 ul { padding-left: 5.1em }
+.service-richtext.is-creer-1 ul { list-style-type: square }
+.service-more.is-creer { margin-top: 1.9313em; padding-bottom: 1.75em }
+
+/* Defendre ses interets face a un debiteur en procedure collective */
+.service-layout.is-creancier { margin-top: 3.325em }
+.service-separator.is-creancier { margin-top: 2.9062em }
+.service-cards.is-creancier { margin-left: 2.5063em; width: 48.6187em }
+.service-card.is-creancier { height: 86.9062em }
+.service-richtext.is-creancier-1 { margin-top: 0.8512em; margin-left: 2.9287em; width: 25.2825em }
+.service-richtext.is-creancier-1 h2 { margin-top: -0em; margin-bottom: -0.2662em; margin-left: -2.01em; padding-top: 0em; padding-bottom: 0.2662em; padding-left: 2.01em; background-position: 0 0.0975em }
+.service-richtext.is-creancier-1 ul { padding-left: 1.68em }
+.service-richtext.is-creancier-1 blockquote { padding-left: 6.4575em; margin-top: -0em; margin-bottom: -0.0712em; padding-top: 0em; padding-bottom: 0.0712em; background-position: 5.3062em 0.1125em }
+.service-richtext.is-creancier-1 a { top: 0.1583em }
+.service-more.is-creancier { margin-top: 1.4062em; padding-bottom: 2.7875em; padding-right: 4.0625em }
+
+/* Encadrer vos relations clients */
+.service-card.is-clients { height: 55.4937em }
+.service-richtext.is-clients-1 { margin-top: 0.9187em; margin-left: 2.8162em; width: 25.4137em; font-weight: 100 }
+.service-richtext.is-clients-1 h2 { margin-top: -0.1012em; margin-bottom: -0.0675em; margin-left: -1.8em; padding-top: 0.1012em; padding-bottom: 0.0675em; padding-left: 1.8em; background-position: 0 0em }
+.service-richtext.is-clients-1 ul { padding-left: 1.7175em }
+.service-richtext.is-clients-1 blockquote { padding-left: 6.2812em; margin-top: -0.1762em; margin-bottom: -0em; padding-top: 0.1762em; padding-bottom: 0em; background-position: 5.13em 0em }
+.service-richtext.is-clients-1 a { top: -0.1625em }
+.service-more.is-clients { margin-top: 1.4062em; padding-bottom: 2.9625em; padding-right: 5.25em }
+
+/* Faire evoluer votre societe */
+.service-card.is-evoluer { height: 75.4562em }
+.service-richtext.is-evoluer-1 { margin-top: 0.945em; margin-left: 2.9925em; width: 24.99em }
+.service-richtext.is-evoluer-1 h2 { margin-top: -0.1462em; margin-bottom: -0.0225em; margin-left: -2.07em; padding-top: 0.1462em; padding-bottom: 0.0225em; padding-left: 2.07em; background-position: 0 0em }
+.service-richtext.is-evoluer-1 ul { padding-left: 5.1037em }
+.service-richtext.is-evoluer-1 ul { list-style-type: square }
+.service-richtext.is-evoluer-1 blockquote { padding-left: 5.8575em; margin-top: -0em; margin-bottom: -0.0056em; padding-top: 0em; padding-bottom: 0.0056em; background-position: 4.7062em 0.0469em }
+.service-richtext.is-evoluer-1 a { top: 0.0854em }
+.service-more.is-evoluer { margin-top: 2.1188em; padding-bottom: 2.6625em; padding-right: 3.9375em }
+
+/* Faire face a des impayes Recouvrer une creance */
+.service-card.is-impayes { height: 78.0687em }
+.service-card-label.is-impayes-1 { margin-top: 1.4875em; margin-left: 0.2812em; width: 47.65em }
+.service-card-label-line.is-impayes-1 { width: 29.1313em; margin-top: 0.8813em }
+.service-richtext.is-impayes-2 { margin-top: 0.6412em; margin-left: 2.6437em; width: 25.6987em; font-weight: 100 }
+.service-richtext.is-impayes-2 h2 { margin-top: -0em; margin-bottom: -0.3544em; margin-left: -1.9687em; padding-top: 0em; padding-bottom: 0.3544em; padding-left: 1.9687em; background-position: 0 0.1856em }
+.service-richtext.is-impayes-2 ul { padding-left: 5.115em }
+.service-richtext.is-impayes-2 ul { list-style-type: square }
+.service-richtext.is-impayes-3 { margin-top: 0em; margin-left: 2.6437em; width: 25.6987em }
+.service-richtext.is-impayes-3 h2 { margin-top: -0.0862em; margin-bottom: -0.0825em; margin-left: -1.9687em; padding-top: 0.0862em; padding-bottom: 0.0825em; padding-left: 1.9687em; background-position: 0 0em }
+.service-richtext.is-impayes-3 ul { padding-left: 1.7025em }
+.service-richtext.is-impayes-3 blockquote { padding-left: 6.5625em; margin-top: -0em; margin-bottom: -0.4856em; padding-top: 0em; padding-bottom: 0.4856em; background-position: 5.4112em 0.5269em }
+.service-richtext.is-impayes-3 a { top: 0.0063em }
+.service-more.is-impayes { margin-top: 1.9em; padding-bottom: 4.2687em }
+
+/* Faire face a une procedure collective en tant que dirigeant */
+.service-layout.is-dirigeant { margin-top: 3.325em }
+.service-separator.is-dirigeant { margin-top: 2.9062em }
+.service-cards.is-dirigeant { margin-left: 2.5063em; width: 48.6187em }
+.service-card.is-dirigeant { height: 89.475em }
+.service-richtext.is-dirigeant-1 { margin-top: 0.7875em; margin-left: 2.745em; width: 25.2825em }
+.service-richtext.is-dirigeant-1 h2 { margin-top: -0.0337em; margin-bottom: -0.135em; margin-left: -1.7587em; padding-top: 0.0337em; padding-bottom: 0.135em; padding-left: 1.7587em; background-position: 0 0em }
+.service-richtext.is-dirigeant-1 ul { padding-left: 1.7137em }
+.service-richtext.is-dirigeant-1 blockquote { padding-left: 6.6075em; margin-top: -0em; margin-bottom: -0.1612em; padding-top: 0em; padding-bottom: 0.1612em; background-position: 5.4525em 0.2025em }
+.service-richtext.is-dirigeant-1 a { top: 0.2583em }
+.service-richtext.is-dirigeant-2 { margin-top: 0em; margin-left: 2.745em; width: 25.2825em }
+.service-richtext.is-dirigeant-2 h2 { margin-top: -0em; margin-bottom: -0.1725em; margin-left: -1.7587em; padding-top: 0em; padding-bottom: 0.1725em; padding-left: 1.7587em; background-position: 0 0.0037em }
+.service-richtext.is-dirigeant-2 ul { padding-left: 5.0887em }
+.service-richtext.is-dirigeant-2 ul { list-style-type: square }
+.service-richtext.is-dirigeant-3 { margin-top: 0em; margin-left: 2.745em; width: 25.2825em }
+.service-richtext.is-dirigeant-3 h2 { margin-top: -0.0787em; margin-bottom: -0.09em; margin-left: -1.7587em; padding-top: 0.0787em; padding-bottom: 0.09em; padding-left: 1.7587em; background-position: 0 0em }
+.service-richtext.is-dirigeant-3 ul { padding-left: 1.7137em }
+.service-more.is-dirigeant { margin-top: 1.2938em; padding-bottom: 2.5812em }
+
+/* Financer votre croissance */
+.service-cards.is-financer { margin-left: 3.4875em; width: 47.6938em }
+.service-card.is-financer { height: 42.3813em }
+.service-richtext.is-financer-1 { margin-top: 0.8175em; margin-left: 3.0862em; width: 24.5325em; font-weight: 400 }
+.service-richtext.is-financer-1 h2 { margin-top: -0.1312em; margin-bottom: -0.0375em; margin-left: -2.07em; padding-top: 0.1312em; padding-bottom: 0.0375em; padding-left: 2.07em; background-position: 0 0em }
+.service-richtext.is-financer-1 ul { padding-left: 1.6837em }
+.service-richtext.is-financer-1 blockquote { padding-left: 6.0562em; margin-top: -0em; margin-bottom: -0.1087em; padding-top: 0em; padding-bottom: 0.1087em; background-position: 4.905em 0.15em }
+.service-richtext.is-financer-1 a { top: 0.2em }
+.service-more.is-financer { margin-top: 1.8625em; padding-bottom: 2.7em; padding-right: 3.3937em }
+
+/* Formaliser et perenisser vos partenariats commerciaux */
+.service-card.is-formaliser { height: 60.1938em }
+.service-richtext.is-formaliser-1 { margin-top: 0.8062em; margin-left: 3.285em; width: 24.6712em }
+.service-richtext.is-formaliser-1 h2 { margin-top: -0.1219em; margin-bottom: -0.0469em; margin-left: -2.2687em; padding-top: 0.1219em; padding-bottom: 0.0469em; padding-left: 2.2687em; background-position: 0 0em }
+.service-richtext.is-formaliser-1 ul { padding-left: 1.6987em }
+.service-richtext.is-formaliser-1 blockquote { padding-left: 5.8537em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 4.7025em 0.0187em }
+.service-richtext.is-formaliser-1 a { top: 0.0542em }
+.service-more.is-formaliser { margin-top: 1.3125em; padding-bottom: 2.2938em }
+
+/* Gerer un conflit ou un blocage entre associes */
+.service-card.is-conflit { height: 157.0125em }
+.service-card-label.is-conflit-1 { margin-top: 1.3438em; margin-left: 0.2875em; width: 47.6562em }
+.service-card-label-line.is-conflit-1 { width: 29.1313em; margin-top: 0.8813em }
+.service-richtext.is-conflit-2 { margin-top: 0.6262em; margin-left: 2.4em; width: 25.9987em }
+.service-richtext.is-conflit-2 h2 { margin-top: -0.165em; margin-bottom: -0.0037em; margin-left: -1.7212em; padding-top: 0.165em; padding-bottom: 0.0037em; padding-left: 1.7212em; background-position: 0 0em }
+.service-richtext.is-conflit-2 ul { padding-left: 1.6875em }
+.service-richtext.is-conflit-2 blockquote { padding-left: 6.8625em; margin-top: -0.1462em; margin-bottom: -0em; padding-top: 0.1462em; padding-bottom: 0em; background-position: 5.7112em 0em }
+.service-richtext.is-conflit-2 a { top: -0.1292em }
+.service-card.is-conflit-2 { height: 11.6937em; margin-top: 1.375em; margin-left: 0.075em }
+.service-card-label.is-conflit-2-1 { margin-top: 0.6875em; margin-left: 0.275em; width: 47.6562em }
+.service-card-label-line.is-conflit-2-1 { width: 29.1313em; margin-top: 1.4062em }
+.service-more.is-conflit { margin-top: 1.4313em; padding-bottom: 2.6em; padding-right: 3.9438em }
+
+/* “Passer” en societe */
+.service-cards.is-passer { margin-left: 4.3937em; width: 46.7875em }
+.service-card.is-passer { height: 60.0625em }
+.service-richtext.is-passer-1 { margin-top: 0.9412em; margin-left: 2.5425em; width: 24.5325em }
+.service-richtext.is-passer-2 { margin-top: 1.0537em; margin-left: 2.5425em; width: 24.5325em; font-weight: 100 }
+.service-richtext.is-passer-2 h2 { margin-top: -0.1219em; margin-bottom: -0.0469em; margin-left: -2.07em; padding-top: 0.1219em; padding-bottom: 0.0469em; padding-left: 2.07em; background-position: 0 0em }
+.service-richtext.is-passer-2 ul { padding-left: 1.6837em }
+.service-richtext.is-passer-2 blockquote { padding-left: 5.9287em; margin-top: -0em; margin-bottom: -0.0094em; padding-top: 0em; padding-bottom: 0.0094em; background-position: 4.7775em 0.0506em }
+.service-richtext.is-passer-2 a { top: 0.0896em }
+.service-richtext.is-passer-3 { margin-top: 1.0125em; margin-left: 2.5425em; width: 24.5325em }
+.service-richtext.is-passer-3 ul { padding-left: 5.0587em }
+.service-richtext.is-passer-3 ul { list-style-type: square }
+.service-more.is-passer { margin-top: 1.4062em; padding-bottom: 2.1em; padding-right: 3.9375em }
+
+/* Piloter et adapter vos contrats */
+.service-cards.is-contrats { margin-left: 2.5688em }
+.service-card.is-contrats { height: 79.3187em }
+.service-richtext.is-contrats-1 { margin-top: 0.8062em; margin-left: 3.0337em; width: 25.6987em }
+.service-richtext.is-contrats-1 h2 { margin-top: -0.0656em; margin-bottom: -0.1031em; margin-left: -1.965em; padding-top: 0.0656em; padding-bottom: 0.1031em; padding-left: 1.965em; background-position: 0 0em }
+.service-richtext.is-contrats-1 ul { padding-left: 1.6875em }
+.service-richtext.is-contrats-1 blockquote { padding-left: 6.1462em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 4.995em 0.0412em }
+.service-richtext.is-contrats-1 a { top: 0.0792em }
+.service-more.is-contrats { margin-top: 2.1875em; padding-bottom: 2.7938em }
+
+/* Piloter votre suivi juridique */
+.service-layout.is-suivi { margin-top: 3.6em }
+.service-intro-col.is-suivi { padding-top: 0.0438em }
+.service-cards.is-suivi { margin-left: 3.9562em; width: 47.225em }
+.service-card.is-suivi { height: 39.9625em }
+.service-richtext.is-suivi-1 { margin-top: 0.7237em; margin-left: 2.4862em; width: 25.395em }
+.service-richtext.is-suivi-1 h2 { margin-top: -0.1069em; margin-bottom: -0.0619em; margin-left: -2.115em; padding-top: 0.1069em; padding-bottom: 0.0619em; padding-left: 2.115em; background-position: 0 0em }
+.service-richtext.is-suivi-1 ul { padding-left: 1.7025em }
+.service-richtext.is-suivi-1 blockquote { padding-left: 6.1125em; margin-top: -0em; margin-bottom: -0.0319em; padding-top: 0em; padding-bottom: 0.0319em; background-position: 4.9612em 0.0731em }
+.service-richtext.is-suivi-1 a { top: 0.1146em }
+.service-more.is-suivi { margin-top: 1.6813em; padding-bottom: 3.3312em }
+
+/* Prevenir les difficultes */
+.service-intro-col.is-prevenir { margin-left: 6.0938em }
+.service-cards.is-prevenir { margin-left: 1.9062em; width: 48.6125em }
+.service-card.is-prevenir { height: 43.775em }
+.service-richtext.is-prevenir-1 { margin-top: 0.8062em; margin-left: 2.8875em; width: 25.2825em }
+.service-richtext.is-prevenir-1 h2 { margin-top: -0em; margin-bottom: -0.225em; margin-left: -1.9012em; padding-top: 0em; padding-bottom: 0.225em; padding-left: 1.9012em; background-position: 0 0.0562em }
+.service-richtext.is-prevenir-1 ul { padding-left: 1.6837em }
+.service-richtext.is-prevenir-2 { margin-top: 0em; margin-left: 2.8875em; width: 25.2825em }
+.service-richtext.is-prevenir-2 h2 { margin-top: -0em; margin-bottom: -0.2287em; margin-left: -1.9012em; padding-top: 0em; padding-bottom: 0.2287em; padding-left: 1.9012em; background-position: 0 0.06em }
+.service-richtext.is-prevenir-2 ul { padding-left: 5.0962em }
+.service-richtext.is-prevenir-2 ul { list-style-type: square }
+.service-richtext.is-prevenir-3 { margin-top: 0em; margin-left: 2.8875em; width: 25.2825em }
+.service-richtext.is-prevenir-3 h2 { margin-top: -0em; margin-bottom: -0.2906em; margin-left: -1.9012em; padding-top: 0em; padding-bottom: 0.2906em; padding-left: 1.9012em; background-position: 0 0.1219em }
+.service-richtext.is-prevenir-3 ul { padding-left: 1.6837em }
+.service-richtext.is-prevenir-3 blockquote { padding-left: 6.15em; margin-top: -0em; margin-bottom: -0.6337em; padding-top: 0em; padding-bottom: 0.6337em; background-position: 5.2012em 0.675em }
+.service-richtext.is-prevenir-3 a { top: 0.1708em }
+.service-more.is-prevenir { margin-top: 1.2313em; padding-bottom: 2.9813em; padding-right: 3.9375em }
+
+/* Racheter une entreprise */
+.service-cards.is-racheter { margin-left: 2.6625em }
+.service-card.is-racheter { height: 62.25em }
+.service-richtext.is-racheter-1 { margin-top: 0.5512em; margin-left: 1.965em; width: 26.4em }
+.service-richtext.is-racheter-1 h2 { margin-top: -0.1125em; margin-bottom: -0.0562em; margin-left: -1.6012em; padding-top: 0.1125em; padding-bottom: 0.0562em; padding-left: 1.6012em; background-position: 0 0em }
+.service-richtext.is-racheter-1 ul { padding-left: 5.1em }
+.service-richtext.is-racheter-1 ul { list-style-type: square }
+.service-richtext.is-racheter-1 blockquote { padding-left: 7.2637em; margin-top: -0em; margin-bottom: -0.18em; padding-top: 0em; padding-bottom: 0.18em; background-position: 6.1125em 0.2212em }
+.service-richtext.is-racheter-1 a { top: 0.2792em }
+.service-more.is-racheter { margin-top: 1.3125em; padding-bottom: 2.675em; padding-right: 5.25em }
+
+/* Reprendre une difficulté (ou l'un de ses actifs) */
+.service-layout.is-reprendre { margin-top: 3.325em }
+.service-intro-col.is-reprendre { padding-top: -0.55em }
+.service-separator.is-reprendre { margin-top: 2.9062em }
+.service-cards.is-reprendre { margin-left: 2.5063em; width: 48.6187em }
+.service-card.is-reprendre { height: 71.5em }
+.service-richtext.is-reprendre-1 { margin-top: 0.8512em; margin-left: 2.8012em; width: 25.2825em }
+.service-richtext.is-reprendre-1 h2 { margin-top: -0.03em; margin-bottom: -0.1387em; margin-left: -1.8825em; padding-top: 0.03em; padding-bottom: 0.1387em; padding-left: 1.8825em; background-position: 0 0em }
+.service-richtext.is-reprendre-1 ul { padding-left: 1.695em }
+.service-richtext.is-reprendre-1 blockquote { padding-left: 6.585em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 5.4337em 0.0281em }
+.service-richtext.is-reprendre-1 a { top: 0.0646em }
+.service-more.is-reprendre { margin-top: 1.35em; padding-bottom: 2.375em; padding-right: 4.0625em }
+
+/* Resoudre un probleme de gouvernance */
+.service-card.is-gouvernance { height: 78.7812em }
+.service-card-label.is-gouvernance-1 { margin-top: 1.3438em; margin-left: 0.2875em; width: 47.6562em }
+.service-card-label-line.is-gouvernance-1 { width: 29.1313em; margin-top: 0.8813em }
+.service-richtext.is-gouvernance-2 { margin-top: 0.5062em; margin-left: 2.4937em; width: 25.9987em }
+.service-richtext.is-gouvernance-2 h2 { margin-top: -0.03em; margin-bottom: -0.1387em; margin-left: -1.815em; padding-top: 0.03em; padding-bottom: 0.1387em; padding-left: 1.815em; background-position: 0 0em }
+.service-richtext.is-gouvernance-2 ul { padding-left: 1.7062em }
+.service-richtext.is-gouvernance-2 blockquote { padding-left: 6.5362em; margin-top: -0em; margin-bottom: -0.0112em; padding-top: 0em; padding-bottom: 0.0112em; background-position: 5.385em 0.0525em }
+.service-richtext.is-gouvernance-2 a { top: 0.0958em }
+.service-card.is-gouvernance-2 { height: 11.6937em; margin-top: 1.5687em }
+.service-card-label.is-gouvernance-2-1 { margin-top: 0.6875em; margin-left: 0.2812em; width: 47.6562em }
+.service-card-label-line.is-gouvernance-2-1 { width: 29.1313em; margin-top: 1.4062em }
+.service-more.is-gouvernance { margin-top: 1.4313em; padding-bottom: 2.5125em }
+
+/* Sauvegarder vos interets apres une vente */
+.service-card.is-sauvegarder { height: 39.4813em }
+.service-card-label.is-sauvegarder-1 { margin-top: 1.3438em; margin-left: 0.2812em; width: 47.6562em }
+.service-card-label-line.is-sauvegarder-1 { width: 29.1313em; margin-top: 0.8813em }
+.service-richtext.is-sauvegarder-2 { margin-top: 0.72em; margin-left: 2.6475em; width: 25.6987em }
+.service-richtext.is-sauvegarder-2 h2 { margin-top: -0.045em; margin-bottom: -0.1237em; margin-left: -1.9687em; padding-top: 0.045em; padding-bottom: 0.1237em; padding-left: 1.9687em; background-position: 0 0em }
+.service-richtext.is-sauvegarder-2 ul { padding-left: 1.7025em }
+.service-card.is-sauvegarder-2 { height: 11.6937em; margin-top: 2.2188em }
+.service-card-label.is-sauvegarder-2-1 { margin-top: 1.275em; margin-left: 0.2812em; width: 47.6562em }
+.service-card-label-line.is-sauvegarder-2-1 { width: 29.1313em; margin-top: 1.4062em }
+.service-more.is-sauvegarder { margin-top: 1.4313em; padding-bottom: 3.0375em }
+
+/* Securiser vos locaux et votre bail */
+.service-intro-col.is-bail { padding-top: 0em }
+.service-cards.is-bail { margin-left: 2.6625em }
+.service-card.is-bail { height: 49.8188em }
+.service-richtext.is-bail-1 { margin-top: 0.5475em; margin-left: 0.3637em; width: 28.0012em }
+.service-richtext.is-bail-2 { margin-top: 1.3012em; margin-left: 2.1937em; width: 26.4em }
+.service-richtext.is-bail-2 h2 { margin-top: -0.1837em; margin-bottom: -0em; margin-left: -1.62em; padding-top: 0.1837em; padding-bottom: 0em; padding-left: 1.62em; background-position: 0 0em }
+.service-richtext.is-bail-2 ul { padding-left: 1.6837em }
+.service-richtext.is-bail-2 blockquote { padding-left: 7.035em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 5.8837em 0.0412em }
+.service-richtext.is-bail-2 a { top: 0.0792em }
+.service-card.is-bail-2 { height: 53.8438em; margin-top: 1.4438em }
+.service-richtext.is-bail-2-1 { margin-top: 0.735em; margin-left: 0.3637em; width: 28.0012em }
+.service-richtext.is-bail-2-2 { margin-top: 1.0462em; margin-left: 2.1937em; width: 26.4em }
+.service-richtext.is-bail-2-2 h2 { margin-top: -0.2587em; margin-bottom: -0em; margin-left: -1.62em; padding-top: 0.2587em; padding-bottom: 0em; padding-left: 1.62em; background-position: 0 0em }
+.service-richtext.is-bail-2-2 ul { padding-left: 1.6837em }
+.service-richtext.is-bail-2-2 blockquote { padding-left: 7.035em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 5.8837em 0.0131em }
+.service-richtext.is-bail-2-2 a { top: 0.0479em }
+.service-more.is-bail { margin-top: 1.9313em; padding-bottom: 3.325em; padding-right: 4.8688em }
+
+/* Valoriser vos actifs immatériels */
+.service-card.is-actifs { height: 49.2563em }
+.service-richtext.is-actifs-1 { margin-top: 0.9975em; margin-left: 2.835em; width: 25.395em; font-weight: 400 }
+.service-richtext.is-actifs-1 em { font-weight: 300 }
+.service-richtext.is-actifs-1 h2 { margin-top: -0.1312em; margin-bottom: -0.0375em; margin-left: -1.8187em; padding-top: 0.1312em; padding-bottom: 0.0375em; padding-left: 1.8187em; background-position: 0 0em }
+.service-richtext.is-actifs-1 ul { padding-left: 1.6987em }
+.service-more.is-actifs { margin-top: 1.15em; padding-bottom: 2.6437em; padding-right: 4.725em }
+
+/* Vendre votre entreprise Transmettre votre entreprise */
+.service-card.is-vendre { height: 78.0812em }
+.service-richtext.is-vendre-1 { margin-top: 0.8062em; margin-left: 2.7em; width: 25.6987em }
+.service-richtext.is-vendre-1 h2 { margin-top: -0.0262em; margin-bottom: -0.1425em; margin-left: -1.8187em; padding-top: 0.0262em; padding-bottom: 0.1425em; padding-left: 1.8187em; background-position: 0 0em }
+.service-richtext.is-vendre-1 ul { padding-left: 5.0962em }
+.service-richtext.is-vendre-1 ul { list-style-type: square }
+.service-richtext.is-vendre-1 blockquote { padding-left: 6.5662em; margin-top: -0em; margin-bottom: -0.1537em; padding-top: 0em; padding-bottom: 0.1537em; background-position: 5.415em 0.195em }
+.service-richtext.is-vendre-1 a { top: 0.25em }
+.service-richtext.is-vendre-2 { margin-top: 1.0125em; margin-left: 2.7em; width: 25.6987em }
+.service-richtext.is-vendre-2 h2 { margin-top: -0.2212em; margin-bottom: -0em; margin-left: -1.8187em; padding-top: 0.2212em; padding-bottom: 0em; padding-left: 1.8187em; background-position: 0 0em }
+.service-richtext.is-vendre-2 blockquote { padding-left: 7.1475em; margin-top: -0em; margin-bottom: -0em; padding-top: 0em; padding-bottom: 0em; background-position: 5.9962em 0.0412em }
+.service-richtext.is-vendre-2 a { top: 0.0792em }
+.service-more.is-vendre { margin-top: 1.4375em; padding-bottom: 2.8438em; padding-right: 3.3937em }
+
+/* Vous associer Ouvrir votre capital */
+.service-intro-col.is-associer { padding-top: 0.2188em }
+.service-cards.is-associer { margin-left: 2.5688em; width: 48.6187em }
+.service-card.is-associer { height: 49.3875em }
+.service-richtext.is-associer-1 { margin-top: 0.8212em; margin-left: 3.0562em; width: 25.2825em }
+.service-richtext.is-associer-1 h2 { margin-top: -0.0525em; margin-bottom: -0.1162em; margin-left: -2.07em; padding-top: 0.0525em; padding-bottom: 0.1162em; padding-left: 2.07em; background-position: 0 0em }
+.service-richtext.is-associer-1 ul { padding-left: 5.115em }
+.service-richtext.is-associer-1 ul { list-style-type: square }
+.service-richtext.is-associer-1 blockquote { padding-left: 5.4em; margin-top: -0em; margin-bottom: -0.075em; padding-top: 0em; padding-bottom: 0.075em; background-position: 4.245em 0.1162em }
+.service-richtext.is-associer-1 a { top: 0.1625em }
+.service-more.is-associer { margin-top: 1.8125em; padding-bottom: 2.35em; padding-right: 3.3937em }
+
+/* Vous defendre en cas de contentieux */
+.service-card.is-contentieux { height: 68.175em }
+.service-card-label.is-contentieux-1 { margin-top: 1.3438em; margin-left: 0.2812em; width: 47.6562em }
+.service-card-label-line.is-contentieux-1 { width: 29.1313em; margin-top: 0.8813em }
+.service-richtext.is-contentieux-2 { margin-top: 0.7275em; margin-left: 2.6437em; width: 25.9425em }
+.service-richtext.is-contentieux-2 h2 { margin-top: -0.03em; margin-bottom: -0.1387em; margin-left: -1.9687em; padding-top: 0.03em; padding-bottom: 0.1387em; padding-left: 1.9687em; background-position: 0 0em }
+.service-richtext.is-contentieux-2 ul { padding-left: 1.7025em }
+.service-richtext.is-contentieux-2 blockquote { padding-left: 6.0675em; margin-top: -0em; margin-bottom: -0.1087em; padding-top: 0em; padding-bottom: 0.1087em; background-position: 4.9162em 0.15em }
+.service-richtext.is-contentieux-2 a { top: 0.2em }
+.service-card.is-contentieux-2 { height: 74.9562em; margin-top: 1.8812em }
+.service-card-label.is-contentieux-2-1 { margin-top: 0.675em; margin-left: 0em; width: 48.275em }
+.service-card-label-line.is-contentieux-2-1 { width: 29.1313em; margin-top: 1.6875em }
+.service-richtext.is-contentieux-2-2 { margin-top: 0.1162em; margin-left: 2.6437em; width: 25.6987em }
+.service-richtext.is-contentieux-2-2 h2 { margin-top: -0.0581em; margin-bottom: -0.1106em; margin-left: -1.965em; padding-top: 0.0581em; padding-bottom: 0.1106em; padding-left: 1.965em; background-position: 0 0em }
+.service-richtext.is-contentieux-2-2 ul { padding-left: 1.7025em }
+.service-more.is-contentieux { margin-top: 1.1875em; padding-bottom: 3.0375em; padding-right: 3.9375em }
+
+/* =========================================================
+   Mobile (référence 390 px) : chaque bloc garde la mise en page
+   ordinateur réduite par sa taille de base, comme le fait Canva.
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  /* Batir un groupe Restructurer votre capital (mobile réduit comme dans Canva) */
+  .service-title-box.is-batir { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-batir { margin-top: 1.075rem; margin-left: -0.4132rem; font-size: 0.2763rem }
+  .service-more.is-batir { margin-top: 0.5175rem; padding-right: 1.0003rem; padding-bottom: 2.2833rem; font-size: 0.2765rem }
+
+  /* Creer votre entreprise (mobile recomposé) */
+  .service-title-box.is-creer { margin-top: 1.9312rem; margin-left: 1.2rem; font-size: 0.2764rem }
+  .service-layout.is-creer { flex-direction: column; margin-top: 1.4375rem }
+  .service-intro-col.is-creer { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-creer { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-creer { margin-top: 1.1375rem; margin-left: 4.5438rem; font-size: 0.9329rem }
+  .service-cards.is-creer { width: 22.2688rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.461rem }
+  .service-card.is-creer { width: 22.2688rem; height: 18.1187rem; margin-left: 0 }
+  .service-richtext.is-creer-1 { margin-top: 0.9875rem; margin-left: 1.9875rem; width: 20.2812rem }
+  .service-more.is-creer { margin-top: 0.8915rem; padding-right: 1.0127rem; padding-bottom: 1.3429rem; font-size: 0.4611rem }
+
+  /* Defendre ses interets face a un debiteur en procedure collective (mobile recomposé) */
+  .service-title-box.is-creancier { margin-top: 1.15rem; margin-left: 1.3062rem; font-size: 0.2726rem }
+  .service-layout.is-creancier { flex-direction: column; margin-top: 1.6625rem }
+  .service-intro-col.is-creancier { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-creancier { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-creancier { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-creancier { width: 22.2688rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4582rem }
+  .service-card.is-creancier { width: 22.2688rem; height: 39.8062rem; margin-left: 0 }
+  .service-richtext.is-creancier-1 { margin-top: 0.65rem; margin-left: 2.2313rem; width: 19.3rem }
+  .service-more.is-creancier { margin-top: 0.6487rem; padding-right: 1.0139rem; padding-bottom: 2.1685rem; font-size: 0.4582rem }
+
+  /* Encadrer vos relations clients (mobile réduit comme dans Canva) */
+  .service-title-box.is-clients { margin-top: 1.0875rem; margin-left: 1.15rem; font-size: 0.277rem }
+  .service-layout.is-clients { margin-top: 1.2437rem; margin-left: -0.4213rem; font-size: 0.2778rem }
+  .service-more.is-clients { margin-top: 0.3858rem; padding-right: 1.2559rem; padding-bottom: 2.2767rem; font-size: 0.2779rem }
+
+  /* Faire evoluer votre societe (mobile recomposé) */
+  .service-title-box.is-evoluer { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-evoluer { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-evoluer { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-evoluer { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-evoluer { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-evoluer { width: 22.2375rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4607rem }
+  .service-card.is-evoluer { width: 22.2375rem; height: 34.7375rem; margin-left: 0 }
+  .service-richtext.is-evoluer-1 { margin-top: 0.7188rem; margin-left: 2.3rem; width: 19.175rem }
+  .service-more.is-evoluer { margin-top: 0.973rem; padding-right: 1.0129rem; padding-bottom: 2.068rem; font-size: 0.4605rem }
+
+  /* Faire face a des impayes Recouvrer une creance (mobile recomposé) */
+  .service-title-box.is-impayes { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-impayes { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-impayes { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-impayes { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-impayes { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-impayes { width: 22.2688rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4612rem }
+  .service-card.is-impayes { width: 22.2688rem; height: 35.9937rem; margin-left: 0 }
+  .service-card-label.is-impayes-1 { margin-top: 0.6813rem; margin-left: 0.1313rem; width: 21.9688rem }
+  .service-richtext.is-impayes-2 { margin-top: 0.5rem; margin-left: 2.0312rem; width: 19.7437rem }
+  .service-richtext.is-impayes-3 { margin-top: 0.0063rem; margin-left: 2.0312rem; width: 19.7437rem }
+  .service-more.is-impayes { margin-top: 0.8665rem; padding-right: 1.0127rem; padding-bottom: 3.3554rem; font-size: 0.4611rem }
+
+  /* Faire face a une procedure collective en tant que dirigeant (mobile recomposé) */
+  .service-title-box.is-dirigeant { margin-top: 1.15rem; margin-left: 1.3062rem; font-size: 0.2726rem }
+  .service-layout.is-dirigeant { flex-direction: column; margin-top: 1.6625rem }
+  .service-intro-col.is-dirigeant { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-dirigeant { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-dirigeant { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-dirigeant { width: 22.2437rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4576rem }
+  .service-card.is-dirigeant { width: 22.2437rem; height: 40.9312rem; margin-left: 0 }
+  .service-richtext.is-dirigeant-1 { margin-top: 0.6rem; margin-left: 2.0938rem; width: 19.275rem }
+  .service-richtext.is-dirigeant-2 { margin-top: 0; margin-left: 2.0938rem; width: 19.275rem }
+  .service-richtext.is-dirigeant-3 { margin-top: 0; margin-left: 2.0938rem; width: 19.275rem }
+  .service-more.is-dirigeant { margin-top: 0.5927rem; padding-right: 1.0141rem; padding-bottom: 1.9999rem; font-size: 0.4576rem }
+
+  /* Financer votre croissance (mobile réduit comme dans Canva) */
+  .service-title-box.is-financer { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-financer { margin-top: 1.1875rem; margin-left: -0.4045rem; font-size: 0.2747rem }
+  .service-more.is-financer { margin-top: 0.5118rem; padding-right: 0.9947rem; padding-bottom: 2.0712rem; font-size: 0.2746rem }
+
+  /* Formaliser et perenisser vos partenariats commerciaux (mobile réduit comme dans Canva) */
+  .service-title-box.is-formaliser { margin-top: 1.1375rem; margin-left: 1.3062rem; font-size: 0.2724rem }
+  .service-layout.is-formaliser { margin-top: 1.1875rem; margin-left: -0.4151rem; font-size: 0.2767rem }
+  .service-more.is-formaliser { margin-top: 0.3674rem; padding-right: 1.0001rem; padding-bottom: 1.7457rem; font-size: 0.2767rem }
+
+  /* Gerer un conflit ou un blocage entre associes (mobile recomposé) */
+  .service-title-box.is-conflit { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-conflit { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-conflit { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-conflit { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-conflit { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-conflit { width: 22.2688rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4606rem }
+  .service-card.is-conflit { width: 22.2375rem; height: 72.2875rem; margin-left: 0 }
+  .service-card-label.is-conflit-1 { margin-top: 0.6125rem; margin-left: 0.1313rem; width: 21.9438rem }
+  .service-richtext.is-conflit-2 { margin-top: 0.4875rem; margin-left: 1.8438rem; width: 19.95rem }
+  .service-card.is-conflit-2 { width: 22.2375rem; height: 5.3875rem; margin-top: 0.6312rem; margin-left: 0.0312rem }
+  .service-card-label.is-conflit-2-1 { margin-top: 0.3187rem; margin-left: 0.1313rem; width: 21.9375rem }
+  .service-more.is-conflit { margin-top: 0.6542rem; padding-right: 1.0129rem; padding-bottom: 2.018rem; font-size: 0.4605rem }
+
+  /* “Passer” en societe (mobile recomposé) */
+  .service-title-box.is-passer { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-passer { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-passer { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-passer { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-passer { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-passer { width: 22.2312rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4753rem }
+  .service-card.is-passer { width: 22.2312rem; height: 28.5437rem; margin-left: 0 }
+  .service-richtext.is-passer-1 { margin-top: 0.75rem; margin-left: 2.0125rem; width: 19.4312rem }
+  .service-richtext.is-passer-2 { margin-top: 0.8rem; margin-left: 2.0125rem; width: 19.4312rem }
+  .service-richtext.is-passer-3 { margin-top: 0.8rem; margin-left: 2.0125rem; width: 19.4312rem }
+  .service-more.is-passer { margin-top: 0.6679rem; padding-right: 1.0194rem; padding-bottom: 1.621rem; font-size: 0.4753rem }
+
+  /* Piloter et adapter vos contrats (mobile recomposé) */
+  .service-title-box.is-contrats { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-contrats { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-contrats { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-contrats { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-contrats { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-contrats { width: 22.425rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4782rem }
+  .service-card.is-contrats { width: 22.425rem; height: 73.0563rem; margin-left: 0 }
+  .service-richtext.is-contrats-1 { margin-top: 31.1625rem; margin-left: 0.975rem; width: 20.475rem }
+  .service-richtext.is-contrats-1 h2 { margin-left: 0; padding-left: 0; background-image: none }
+  .service-more.is-contrats { margin-top: 0.9062rem; padding-right: 1.0437rem; padding-bottom: 2.2375rem; font-size: 0.8rem }
+
+  /* Piloter votre suivi juridique (mobile réduit comme dans Canva) */
+  .service-title-box.is-suivi { margin-top: 1.0875rem; margin-left: 1.15rem; font-size: 0.277rem }
+  .service-layout.is-suivi { margin-top: 1.2812rem; margin-left: -0.4153rem; font-size: 0.2767rem }
+  .service-more.is-suivi { margin-top: 0.4611rem; padding-right: 1.0001rem; padding-bottom: 2.577rem; font-size: 0.2767rem }
+
+  /* Prevenir les difficultes (mobile recomposé) */
+  .service-title-box.is-prevenir { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-prevenir { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-prevenir { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-prevenir { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-prevenir { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-prevenir { width: 22.2375rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4576rem }
+  .service-card.is-prevenir { width: 22.2375rem; height: 20.025rem; margin-left: 0 }
+  .service-richtext.is-prevenir-1 { margin-top: 0.6125rem; margin-left: 2.2062rem; width: 19.275rem }
+  .service-richtext.is-prevenir-2 { margin-top: 0; margin-left: 2.2062rem; width: 19.275rem }
+  .service-richtext.is-prevenir-3 { margin-top: 0; margin-left: 2.2062rem; width: 19.275rem }
+  .service-more.is-prevenir { margin-top: 0.5677rem; padding-right: 1.0141rem; padding-bottom: 2.3249rem; font-size: 0.4576rem }
+
+  /* Racheter une entreprise (mobile recomposé) */
+  .service-title-box.is-racheter { margin-top: 2.0125rem; margin-left: 1.15rem; font-size: 0.277rem }
+  .service-layout.is-racheter { flex-direction: column; margin-top: 1.5875rem }
+  .service-intro-col.is-racheter { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-racheter { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-racheter { margin-top: 1.1313rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-racheter { width: 22.425rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4642rem }
+  .service-card.is-racheter { width: 22.425rem; height: 28.9rem; margin-left: 0 }
+  .service-richtext.is-racheter-1 { margin-top: 0.425rem; margin-left: 1.5188rem; width: 20.425rem }
+  .service-more.is-racheter { margin-top: 0.6091rem; padding-right: 1.3301rem; padding-bottom: 2.0734rem; font-size: 0.4644rem }
+
+  /* Reprendre une difficulté (ou l'un de ses actifs) (mobile réduit comme dans Canva) */
+  .service-title-box.is-reprendre { margin-top: 1.15rem; margin-left: 1.3062rem; font-size: 0.2726rem }
+  .service-layout.is-reprendre { margin-top: 0.9062rem; margin-left: -0.1749rem; font-size: 0.2727rem }
+  .service-more.is-reprendre { margin-top: 0.3688rem; padding-right: 1.1267rem; padding-bottom: 1.8091rem; font-size: 0.2727rem }
+
+  /* Resoudre un probleme de gouvernance (mobile recomposé) */
+  .service-title-box.is-gouvernance { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-gouvernance { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-gouvernance { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-gouvernance { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-gouvernance { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-gouvernance { width: 22.275rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4612rem }
+  .service-card.is-gouvernance { width: 22.2688rem; height: 36.3188rem; margin-left: 0 }
+  .service-card-label.is-gouvernance-1 { margin-top: 0.6188rem; margin-left: 0.1313rem; width: 21.975rem }
+  .service-richtext.is-gouvernance-2 { margin-top: 0.3875rem; margin-left: 1.9187rem; width: 19.975rem }
+  .service-card.is-gouvernance-2 { width: 22.2688rem; height: 5.3937rem; margin-top: 0.7188rem; margin-left: 0.0063rem }
+  .service-card-label.is-gouvernance-2-1 { margin-top: 0.3187rem; margin-left: 0.125rem; width: 21.975rem }
+  .service-more.is-gouvernance { margin-top: 0.6603rem; padding-right: 1.0127rem; padding-bottom: 1.9491rem; font-size: 0.4611rem }
+
+  /* Sauvegarder vos interets apres une vente (mobile recomposé) */
+  .service-title-box.is-sauvegarder { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-sauvegarder { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-sauvegarder { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-sauvegarder { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-sauvegarder { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-sauvegarder { width: 22.275rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4613rem }
+  .service-card.is-sauvegarder { width: 22.275rem; height: 18.2063rem; margin-left: 0 }
+  .service-card-label.is-sauvegarder-1 { margin-top: 0.6188rem; margin-left: 0.1313rem; width: 21.9688rem }
+  .service-richtext.is-sauvegarder-2 { margin-top: 0.5563rem; margin-left: 2.0375rem; width: 19.75rem }
+  .service-card.is-sauvegarder-2 { width: 22.275rem; height: 5.3937rem; margin-top: 1.0125rem; margin-left: 0 }
+  .service-card-label.is-sauvegarder-2-1 { margin-top: 0.5938rem; margin-left: 0.1313rem; width: 21.9688rem }
+  .service-more.is-sauvegarder { margin-top: 0.6602rem; padding-right: 1.0126rem; padding-bottom: 2.3741rem; font-size: 0.4612rem }
+
+  /* Securiser vos locaux et votre bail (mobile recomposé) */
+  .service-title-box.is-bail { margin-top: 2.0125rem; margin-left: 1.15rem; font-size: 0.277rem }
+  .service-layout.is-bail { flex-direction: column; margin-top: 1.5875rem }
+  .service-intro-col.is-bail { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-bail { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-bail { margin-top: 1.1313rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-bail { width: 22.425rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4641rem }
+  .service-card.is-bail { width: 22.425rem; height: 23.1313rem; margin-left: 0 }
+  .service-richtext.is-bail-1 { margin-top: 0.425rem; margin-left: 0.2812rem; width: 21.6625rem }
+  .service-richtext.is-bail-2 { margin-top: 1.0063rem; margin-left: 1.7rem; width: 20.425rem }
+  .service-card.is-bail-2 { width: 22.425rem; height: 24.9937rem; margin-top: 0.6625rem; margin-left: 0 }
+  .service-richtext.is-bail-2-1 { margin-top: 0.575rem; margin-left: 0.2812rem; width: 21.6625rem }
+  .service-richtext.is-bail-2-2 { margin-top: 0.8125rem; margin-left: 1.7rem; width: 20.425rem }
+  .service-more.is-bail { margin-top: 0.9029rem; padding-right: 1.1551rem; padding-bottom: 2.5984rem; font-size: 0.4644rem }
+
+  /* Valoriser vos actifs immatériels (mobile recomposé) */
+  .service-title-box.is-actifs { margin-top: 1.0875rem; margin-left: 1.15rem; font-size: 0.277rem }
+  .service-layout.is-actifs { flex-direction: column; margin-top: 1.5875rem }
+  .service-intro-col.is-actifs { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-actifs { width: 22.425rem; margin-top: 1.4312rem; margin-left: -0.3187rem }
+  .service-button.is-actifs { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-actifs { width: 22.425rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.799rem }
+  .service-card.is-actifs { width: 22.425rem; height: 70.8438rem; margin-left: 0 }
+  .service-richtext.is-actifs-1 { margin-top: 23.9rem; margin-left: 0.975rem; width: 20.475rem }
+  .service-richtext.is-actifs-1 h2 { margin-left: 0; padding-left: 0; background-image: none }
+  .service-more.is-actifs { margin-top: 0.9062rem; padding-right: 1.1812rem; padding-bottom: 2.1187rem; font-size: 0.8rem }
+
+  /* Vendre votre entreprise Transmettre votre entreprise (mobile recomposé) */
+  .service-title-box.is-vendre { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-vendre { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-vendre { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-vendre { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-vendre { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-vendre { width: 21.9937rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4555rem }
+  .service-card.is-vendre { width: 21.9937rem; height: 35.5562rem; margin-left: 0 }
+  .service-richtext.is-vendre-1 { margin-top: 0.6125rem; margin-left: 2.05rem; width: 19.5rem }
+  .service-richtext.is-vendre-2 { margin-top: 1.5312rem; margin-left: 2.05rem; width: 19.5rem }
+  .service-more.is-vendre { margin-top: 0.6497rem; padding-right: 1.015rem; padding-bottom: 2.2191rem; font-size: 0.4554rem }
+
+  /* Vous associer Ouvrir votre capital (mobile recomposé) */
+  .service-title-box.is-associer { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-associer { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-associer { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-associer { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-associer { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-associer { width: 21.9937rem; margin-top: 0.9688rem; margin-left: 0.975rem; font-size: 0.4526rem }
+  .service-card.is-associer { width: 21.9937rem; height: 22.3438rem; margin-left: 0 }
+  .service-richtext.is-associer-1 { margin-top: 0.6188rem; margin-left: 2.3062rem; width: 19.0625rem }
+  .service-more.is-associer { margin-top: 0.8194rem; padding-right: 1.0161rem; padding-bottom: 1.8197rem; font-size: 0.4526rem }
+
+  /* Vous defendre en cas de contentieux (mobile recomposé) */
+  .service-title-box.is-contentieux { margin-top: 1.1375rem; margin-left: 1.3125rem; font-size: 0.2751rem }
+  .service-layout.is-contentieux { flex-direction: column; margin-top: 1.5375rem }
+  .service-intro-col.is-contentieux { width: 21.7875rem; margin-left: 1.2937rem; padding-top: 0; font-size: 0.7764rem }
+  .service-separator.is-contentieux { width: 22.425rem; margin-top: 1.4375rem; margin-left: -0.3187rem }
+  .service-button.is-contentieux { margin-top: 1.1375rem; margin-left: 4.4313rem; font-size: 0.9329rem }
+  .service-cards.is-contentieux { width: 22.2375rem; margin-top: 0.975rem; margin-left: 0.975rem; font-size: 0.4605rem }
+  .service-card.is-contentieux { width: 22.2375rem; height: 31.3875rem; margin-left: 0 }
+  .service-card-label.is-contentieux-1 { margin-top: 0.6125rem; margin-left: 0.1313rem; width: 21.9375rem }
+  .service-richtext.is-contentieux-2 { margin-top: 0.5625rem; margin-left: 2.0312rem; width: 19.9062rem }
+  .service-card.is-contentieux-2 { width: 22.2375rem; height: 34.5125rem; margin-top: 0.8625rem; margin-left: 0 }
+  .service-card-label.is-contentieux-2-1 { margin-top: 0.3125rem; margin-left: 0.1323rem; width: 22.0927rem }
+  .service-richtext.is-contentieux-2-2 { margin-top: 0.0938rem; margin-left: 2.0312rem; width: 19.7188rem }
+  .service-more.is-contentieux { margin-top: 0.5417rem; padding-right: 1.0129rem; padding-bottom: 2.3743rem; font-size: 0.4605rem }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact et rendez-vous • Julie Ricau, avocat d’affaires à Carcassonne</title>
+  <meta name="description" content="Contactez Maître Julie Ricau, avocate d’affaires à Carcassonne : rendez-vous en ligne, formulaire, téléphone 06 12 62 71 40. Premier échange sous 24 à 48h ouvrées.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/monogramme-rond.png" type="image/png">
+  <link href="css/ricau.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bascule.css">
+</head>
+<body class="body">
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
+
+  <!-- Composant « Navbar » : Navbar native Webflow (menu burger dès 991px) -->
+  <div class="navbar" role="banner">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="Ricau Avocat, accueil">
+        <img src="images/logo-ricau-avocat.svg" alt="" class="navbar-logo" width="261" height="132">
+      </a>
+      <nav class="navbar-menu" id="menu-principal" aria-label="Navigation principale">
+        <a href="index.html" class="navbar-link">Accueil</a>
+        <a href="vos-besoins--notre-expertise.html" class="navbar-link">Vos besoins • Notre expertise</a>
+        <a href="le-cabinet.html" class="navbar-link">Le cabinet</a>
+        <a href="contact--rdv.html" class="navbar-link is-current" aria-current="page">Contact</a>
+        <a href="#agenda" class="button is-light is-small">Prendre RDV</a>
+      </nav>
+      <!-- Webflow : bouton placé hors du menu repliable, à côté du bouton menu -->
+      <a href="#agenda" class="button is-light is-small navbar-rdv">RDV</a>
+      <button class="navbar-burger" type="button" aria-label="Ouvrir le menu" aria-controls="menu-principal" aria-expanded="false">
+        <span class="navbar-burger-line"></span>
+        <span class="navbar-burger-line"></span>
+        <span class="navbar-burger-line"></span>
+      </button>
+    </div>
+  </div>
+
+
+  <main id="contenu" tabindex="-1">
+
+    <!-- En-tête de page (même composant que les autres pages intérieures) -->
+    <section class="page-hero">
+      <div class="container is-page-hero">
+        <div class="page-hero-content">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html" class="breadcrumb-link">Accueil</a>
+          </nav>
+          <h1 class="page-hero-title">Prenons le temps<br><strong>d’échanger.</strong></h1>
+          <p class="page-hero-lead">Un premier échange sous 24 à 48h ouvrées, au cabinet, en visioconférence ou au téléphone.</p>
+          <ul class="commit-list is-hero">
+            <li class="commit-item is-on-dark">Devis chiffré systématique avant toute intervention</li>
+            <li class="commit-item is-on-dark">Interlocuteur dédié et toujours joignable</li>
+            <li class="commit-item is-on-dark">Information régulière tout au long du dossier</li>
+          </ul>
+        </div>
+        <div class="rdv-card">
+          <h2 class="rdv-card-title">1er rendez-vous gratuit (30 min)</h2>
+          <p class="rdv-card-text">Au cabinet, en visioconférence ou au téléphone. Réservez votre créneau dans l’agenda ci-dessous, ou appelez directement.</p>
+          <a href="tel:+33612627140" class="button is-light is-full">Appeler le 06 12 62 71 40</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda de prise de rendez-vous (Webflow : élément « Embed » contenant l'iframe cal.eu) -->
+    <section class="agenda-section" id="agenda">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title is-dark">Prise de rendez-vous <strong>en ligne.</strong></h2>
+          <a href="https://www.cal.eu/julie.ricau" class="text-link" target="_blank" rel="noopener">Ouvrir l’agenda dans un nouvel onglet</a>
+        </div>
+        <div class="agenda-frame">
+          <iframe src="https://www.cal.eu/julie.ricau?embed=true&amp;layout=month_view&amp;theme=light" title="Agenda de prise de rendez-vous de Julie Ricau" class="agenda-iframe" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulaire et coordonnées -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Webflow : élément natif « Form Block » (envois reçus dans Webflow et par e-mail) -->
+          <div class="form-block">
+            <h2 class="section-title is-dark">Nous <strong>contacter.</strong></h2>
+            <p class="form-intro">Les champs marqués d’un astérisque sont obligatoires.</p>
+            <form class="form" id="formulaire-contact" name="contact" method="post" action="#">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="prenom" class="form-label">Prénom *</label>
+                  <input type="text" id="prenom" name="prenom" class="form-input" autocomplete="given-name" required>
+                </div>
+                <div class="form-field">
+                  <label for="nom" class="form-label">Nom *</label>
+                  <input type="text" id="nom" name="nom" class="form-input" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="entreprise" class="form-label">Votre entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" class="form-input" autocomplete="organization">
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="email" class="form-label">Votre e-mail *</label>
+                  <input type="email" id="email" name="email" class="form-input" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                  <label for="telephone" class="form-label">Votre numéro de téléphone *</label>
+                  <input type="tel" id="telephone" name="telephone" class="form-input" autocomplete="tel" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="nature" class="form-label">Nature de votre dossier *</label>
+                <select id="nature" name="nature" class="form-input is-select" required>
+                  <option value="">Choisissez la situation la plus proche</option>
+                  <option value="Lancement : créer ou racheter une entreprise">Lancement : créer ou racheter une entreprise</option>
+                  <option value="Structuration : bail, contrats, clients, propriété intellectuelle">Structuration : bail, contrats, clients, propriété intellectuelle</option>
+                  <option value="Essor : associés, capital, groupe">Essor : associés, capital, groupe</option>
+                  <option value="Transition : évolution, cession, transmission">Transition : évolution, cession, transmission</option>
+                  <option value="Litige : impayés, contentieux, conflit entre associés">Litige : impayés, contentieux, conflit entre associés</option>
+                  <option value="Difficulté : prévention, procédure collective, reprise">Difficulté : prévention, procédure collective, reprise</option>
+                  <option value="Autre demande">Autre demande</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="message" class="form-label">Détaillez votre besoin et votre demande</label>
+                <textarea id="message" name="message" class="form-input is-textarea" rows="6"></textarea>
+              </div>
+              <p class="form-legal">Vos informations servent uniquement à traiter votre demande. Pour en savoir plus, consultez les <a href="mentions-lgales.html" class="form-legal-link">mentions légales</a>.</p>
+              <button type="submit" class="button is-dark is-submit">Envoyer ma demande</button>
+            </form>
+            <!-- Webflow : messages natifs du Form Block (envoi réussi / échec) -->
+            <div class="form-success" hidden>Merci, votre demande est bien envoyée. Maître Julie Ricau revient vers vous sous 24 à 48h ouvrées.</div>
+            <div class="form-error" hidden>L’envoi n’a pas abouti. Réessayez, ou écrivez directement à julie@ricau-avocat.fr.</div>
+          </div>
+
+          <aside class="contact-aside">
+            <div class="contact-card">
+              <h2 class="contact-card-title">Coordonnées</h2>
+              <a href="tel:+33612627140" class="contact-card-line">06 12 62 71 40</a>
+              <a href="mailto:julie@ricau-avocat.fr" class="contact-card-line">julie@ricau-avocat.fr</a>
+              <a href="https://share.google/Ud80712EC2RmkYdtM" class="contact-card-line">1, av. Maréchal Foch<br>11000 Carcassonne</a>
+              <ul class="commit-list is-contact">
+                <li class="commit-item is-on-dark">À 2 minutes à pied de la gare de Carcassonne</li>
+                <li class="commit-item is-on-dark">Stationnement aisé à proximité de la gare et du canal du Midi</li>
+                <li class="commit-item is-on-dark">Rendez-vous au cabinet, en visioconférence ou au téléphone</li>
+              </ul>
+            </div>
+            <div class="contact-card is-light">
+              <h2 class="contact-card-title is-dark">Retrouvez Julie Ricau</h2>
+              <a href="https://fr.linkedin.com/in/julie-ricau-89a48bbb" class="aside-related-link"><span class="aside-related-text">Profil LinkedIn</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+              <a href="https://consultation.avocat.fr/avocat-beziers/julie-ricau-57707.html" class="aside-related-link"><span class="aside-related-text">Profil sur avocat.fr</span><img src="images/icone-fleche.svg" alt="" class="needs-link-arrow" width="20" height="20"></a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Composant « Pied de page » -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link"><img src="images/logo-julie-ricau-avocat.svg" alt="Julie Ricau, Avocat" class="footer-logo" width="356" height="116"></a>
+          <p class="footer-tagline">Partenaire des entrepreneurs <strong>en mouvement.</strong><br>Droit des affaires • Conseil &amp; contentieux</p>
+          <div class="footer-social">
+            <a href="https://consultation.avocat.fr/avocat-beziers/julie-ricau-57707.html" class="footer-social-link" aria-label="Profil de Julie Ricau sur avocat.fr"><img src="images/icone-avocat-fr.png" alt="" class="footer-social-icon is-avocat" width="34" height="34"></a>
+            <a href="https://fr.linkedin.com/in/julie-ricau-89a48bbb" class="footer-social-link" aria-label="Profil LinkedIn de Julie Ricau"><img src="images/icone-linkedin.svg" alt="" class="footer-social-icon" width="44" height="44"></a>
+          </div>
+        </div>
+        <nav class="footer-column" aria-label="Vos besoins">
+          <a href="vos-besoins--notre-expertise.html" class="footer-column-title">Vos besoins</a>
+          <a href="vos-besoins--notre-expertise.html#lancement" class="footer-link">Entrepreneurs en lancement</a>
+          <a href="vos-besoins--notre-expertise.html#structuration" class="footer-link">Entrepreneurs en structuration</a>
+          <a href="vos-besoins--notre-expertise.html#essor" class="footer-link">Entrepreneurs en essor</a>
+          <a href="vos-besoins--notre-expertise.html#transition" class="footer-link">Entrepreneurs en transition</a>
+          <a href="vos-besoins--notre-expertise.html#litige" class="footer-link">Entrepreneurs en litige</a>
+          <a href="vos-besoins--notre-expertise.html#difficulte" class="footer-link">Entrepreneurs en difficulté</a>
+        </nav>
+        <nav class="footer-column" aria-label="Notre expertise">
+          <a href="vos-besoins--notre-expertise.html" class="footer-column-title">Notre expertise</a>
+          <a href="creer-votre-entreprise.html" class="footer-link">Droit des sociétés</a>
+          <a href="piloter-et-adapter-vos-contrats.html" data-cmp-absente="../actuel/piloter-et-adapter-vos-contrats.html" class="footer-link">Droit des contrats</a>
+          <a href="encadrer-vos-relations-clients.html" data-cmp-absente="../actuel/encadrer-vos-relations-clients.html" class="footer-link">Droit commercial</a>
+          <a href="valoriser-vos-actifs-immatriels.html" data-cmp-absente="../actuel/valoriser-vos-actifs-immatriels.html" class="footer-link">Propriété intellectuelle</a>
+          <a href="vous-defendre-en-cas-de-contentieux.html" data-cmp-absente="../actuel/vous-defendre-en-cas-de-contentieux.html" class="footer-link">Contentieux des affaires</a>
+          <a href="faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" data-cmp-absente="../actuel/faire-face-a-une-procedure-collective-en-tant-que-dirigeant.html" class="footer-link">Procédures collectives</a>
+        </nav>
+        <div class="footer-column">
+          <a href="le-cabinet.html" class="footer-column-title">Le cabinet</a>
+          <a href="tel:+33612627140" class="footer-link">06 12 62 71 40</a>
+          <a href="mailto:julie@ricau-avocat.fr" class="footer-link">julie@ricau-avocat.fr</a>
+          <a href="https://share.google/Ud80712EC2RmkYdtM" class="footer-link">1, av. Maréchal Foch<br>11000 Carcassonne</a>
+          <a href="contact--rdv.html" class="footer-link">Nous contacter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal-text">© 2026 Julie Ricau • Tous droits réservés</div>
+        <a href="mentions-lgales.html" class="footer-legal-link">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Prototype seulement : animations (dans Webflow : Interactions natives, voir ANIMATIONS-WEBFLOW.md) -->
+  <script src="js/animations-prototype.js" defer></script>
+
+  <!-- Prototype seulement : ouverture du menu mobile. Dans Webflow, la Navbar native le fait sans code. -->
+  <script>
+    document.querySelector('.navbar-burger').addEventListener('click', function () {
+      var menu = document.querySelector('.navbar-menu');
+      var ouvert = menu.classList.toggle('is-open');
+      this.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+    });
+  </script>
+  <!-- Prototype seulement : simulation d'envoi. Dans Webflow, le Form Block gère l'envoi et les messages. -->
+  <script>
+    document.getElementById('formulaire-contact').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.reportValidity(); return; }
+      this.hidden = true;
+      var ok = document.querySelector('.form-success'); ok.hidden = false; ok.setAttribute('tabindex', '-1'); ok.focus();
+    });
+  </script>
+
+  <!-- Comparaison des deux propositions (outil de présentation, hors Webflow) -->
+  <nav class="cmp-bascule" aria-label="Choisir la proposition">
+    <a class="cmp-segment" href="../actuel/contact--rdv.html" data-cmp-ancres="menu-principal contenu nous-contacter rendez-vous">À l’identique</a>
+    <span class="cmp-segment is-actif" aria-current="page">Refonte</span>
+  </nav>
+  <div class="cmp-message" role="status" aria-live="polite" hidden></div>
+  <script src="../bascule.js" defer></script>
+</body>
+</html>

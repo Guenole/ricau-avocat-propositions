@@ -1,0 +1,370 @@
+/* =========================================================
+   Accueil (index.html) du site actuel de Julie Ricau.
+   Mesures relevées sur ricau-avocat.fr : ordinateur 1440 px
+   (valeurs par défaut), mobile 390 px (@media max-width 991px).
+   Classes propres à la page : préfixe « home- ».
+   Les cartes « Notre offre » / « Notre approche » sont écrites
+   en em sur une base de 10 px : Canva les réduit d'un bloc sur
+   mobile, seule la base change (6,124 px).
+   Canva n'applique pas le crénage des polices : font-kerning: none
+   sur chaque section (à déplacer sur body dans commun.css, voir
+   compte rendu ; dans Webflow : code personnalisé global).
+   ========================================================= */
+
+/* ---------- Héros (Webflow : Section, photo en Image positionnée dessous) ---------- */
+.home-hero { position: relative; height: 51.125rem; overflow: hidden; background-color: #f5f4f3; font-kerning: none; }
+.home-hero-photo { position: absolute; top: -6.2375rem; left: 50%; width: 102.15rem; max-width: none; height: 68.1rem; margin-left: -47.2rem; object-fit: cover; }
+/* Logo commun (.logo-header) 18 px plus bas que sur les pages de service ; le logo est un lien vers l'accueil */
+.home-hero-logo { display: flex; align-items: flex-start; padding-top: 1.125rem; }
+.home-hero-rule { width: 85.2687rem; height: 1px; margin-top: 1.5rem; margin-left: 2.3125rem; background-color: var(--blanc); }
+.home-hero-title {
+  margin-top: 5.0625rem;
+  margin-left: 5.3875rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 4.4344rem;
+  font-weight: 300;
+  line-height: 4.5012rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+.home-hero-title-line { display: block; white-space: nowrap; }
+.home-hero-title-line.is-second { margin-top: -0.2575rem; margin-left: 0.0437rem; }
+.home-hero-title-line.is-strong { margin-top: -0.5138rem; font-weight: 400; }
+.home-hero-subtitle {
+  margin-top: 3.2363rem;
+  margin-left: 5.3875rem;
+  color: var(--beige-logo);
+  font-family: var(--codec);
+  font-size: 2.5006rem;
+  font-weight: 300;
+  line-height: 2.5006rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+.home-hero-subtitle-line { display: block; white-space: nowrap; }
+.home-hero-subtitle-line.is-thin { font-weight: 100; }
+.home-hero-actions { display: flex; align-items: flex-start; margin-top: 1.7988rem; }
+.home-hero-button {
+  display: flex;
+  width: 14.3063rem;
+  height: 3.5625rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.0938rem;
+  margin-left: 5.3875rem;
+  border-radius: 0.625rem;
+  background-color: var(--sable);
+  color: #462c16;
+  font-family: var(--codec);
+  font-size: 1.1663rem;
+  font-weight: 800;
+  line-height: 1.6244rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* Monogramme « a. » en bas à droite de la photo */
+.home-hero-mark { display: flex; align-items: flex-start; margin-left: 62.875rem; }
+.home-hero-mark-letter { display: block; width: 3.3625rem; color: var(--blanc); font-family: var(--dream); font-size: 6.6937rem; font-weight: 400; line-height: 9.3338rem; letter-spacing: -0.017em; }
+.home-hero-mark-dot { display: block; width: 0.6438rem; height: 0.6438rem; flex: none; margin-top: 5.7438rem; border-radius: 50%; background-color: var(--beige-logo); }
+
+/* ---------- Bande « A vos côtés. A chaque étape. » (texture à 8 % sur brun) ---------- */
+.home-band { position: relative; height: 14.6875rem; overflow: hidden; background-color: #5f4a32; font-kerning: none; }
+.home-band-texture { position: absolute; top: -29.5875rem; left: 50%; width: 102.4437rem; max-width: none; height: 68.3625rem; margin-left: -57.45rem; opacity: 0.08; object-fit: cover; }
+.home-band-title {
+  width: 83.9rem;
+  margin-left: 2.0875rem;
+  padding-top: 2.9062rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 4.1681rem;
+  font-weight: 400;
+  line-height: 4.2512rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: right;
+}
+.home-band-line { display: block; }
+
+/* ---------- Grille des 6 profils d'entrepreneurs (Webflow : Grid de 3 colonnes) ---------- */
+.home-profiles { background-color: #bfac93; padding-top: 3.2812rem; font-kerning: none; }
+.home-profiles-grid { display: grid; grid-template-columns: 27.1875rem 26.7188rem 1fr; align-items: start; row-gap: 3.8125rem; padding-left: 5.8312rem; }
+/* Profil : largeur = filets de la liste ; positions exactes de chaque colonne du site actuel */
+.home-profile { display: block; }
+.home-profile.is-lancement { width: 23.3875rem; margin-left: 0.1313rem; }
+.home-profile.is-structuration { width: 23.2188rem; margin-left: 0.0187rem; }
+.home-profile.is-essor { width: 23.0875rem; margin-left: 0.0813rem; }
+.home-profile.is-transition { width: 23.0562rem; }
+.home-profile.is-litige { width: 23.1rem; margin-left: 0.05rem; }
+.home-profile.is-difficulte { width: 22.8438rem; }
+/* Vignette (Webflow : Link Block) : photo recadrée à 50 % d'opacité, étiquette posée dessus */
+.home-profile-visual { position: relative; display: block; height: 30.3562rem; margin-bottom: 1.6625rem; overflow: hidden; }
+.home-profile-visual.is-lancement { width: 23.0312rem; margin-left: 0.1125rem; }
+.home-profile-visual.is-structuration { width: 23.2188rem; }
+.home-profile-visual.is-essor { width: 23.1938rem; margin-left: 0.0625rem; margin-bottom: 1.6938rem; }
+.home-profile-visual.is-transition { width: 23.275rem; margin-bottom: 1.55rem; }
+.home-profile-visual.is-litige { width: 23.2rem; margin-left: 0.05rem; margin-bottom: 1.5875rem; }
+.home-profile-visual.is-difficulte { width: 23.1687rem; height: 30.2063rem; margin-bottom: 1.7688rem; }
+.home-profile-image { display: block; max-width: none; opacity: 0.5; }
+.home-profile-image.is-lancement { width: 30.3562rem; height: 30.3562rem; margin-left: -4.1813rem; }
+.home-profile-image.is-structuration { width: 30.3562rem; height: 30.3562rem; margin-left: -2.375rem; }
+.home-profile-image.is-essor { width: 32.2687rem; height: 32.2687rem; margin-left: -3.1063rem; }
+.home-profile-image.is-transition { width: 31.4438rem; height: 31.4438rem; margin-top: -0.5437rem; margin-left: -2.1125rem; }
+.home-profile-image.is-litige { width: 32.35rem; height: 32.35rem; margin-top: -0.9938rem; }
+.home-profile-image.is-difficulte { width: 37.4125rem; height: 37.4125rem; margin-top: -6.3187rem; margin-left: -14.2438rem; }
+/* Étiquette « Entrepreneurs / en … » centrée sur la photo */
+.home-profile-label {
+  position: absolute;
+  top: 12.625rem;
+  right: 0;
+  left: 0;
+  display: block;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 2.3044rem;
+  font-weight: 300;
+  line-height: 2.3125rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+  white-space: nowrap;
+}
+.home-profile-label.is-lancement { top: 12.8063rem; font-size: 2.2837rem; }
+.home-profile-label.is-difficulte { top: 12.45rem; font-size: 2.2887rem; }
+.home-profile-label-line { display: block; margin-right: 0.2188rem; }
+.home-profile-label-line.is-transition { margin-right: 0.4688rem; }
+.home-profile-pill-row { display: flex; justify-content: center; margin-top: -0.15rem; }
+/* Pastille brune (effet « fond de texte » de Canva) */
+.home-profile-pill { display: block; margin-left: 0.05rem; padding: 0.25rem 0.3375rem 0.25rem 0.2125rem; border-radius: 0.7094rem; background-color: var(--brun-fonce); }
+.home-profile-pill.is-lancement { margin-left: 0.4163rem; }
+.home-profile-pill.is-structuration { padding: 0.2812rem 0.4481rem 0.2812rem 0.3231rem; border-radius: 0.7375rem; }
+.home-profile-pill.is-litige { margin-left: 0.3362rem; }
+.home-profile-pill.is-difficulte { margin-left: 0.2375rem; }
+/* Liste de liens séparés par des filets blancs (Webflow : List + List Item) */
+.home-profile-list { border-bottom: 1px solid var(--blanc); list-style: none; }
+.home-profile-item { padding-top: 1.2188rem; padding-bottom: 1.4563rem; border-top: 1px solid var(--blanc); }
+.home-profile-link {
+  display: block;
+  color: var(--creme);
+  font-family: var(--codec);
+  font-size: 1.6669rem;
+  font-weight: 400;
+  line-height: 1.6875rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+.home-profile-link.is-indent { margin-left: 0.1437rem; }
+.home-profile-link.is-justify { text-align: justify; }
+.home-profile-link-sub { font-weight: 100; }
+
+/* Icône « retour en haut » (Webflow : Link Block + Image) */
+.home-top-link { display: block; width: 2.3438rem; height: 2.2625rem; margin-top: -2.2625rem; margin-left: 81.9rem; }
+.home-top-link.is-firm { margin-top: 2.1056rem; margin-left: 83.2687rem; }
+.home-top-icon { display: block; width: 100%; height: 100%; }
+
+/* ---------- Bande « Vos besoins. Notre expertise. » (texture à 55 % sur beige) ---------- */
+.home-needs { position: relative; height: 11.2063rem; margin-top: 2.325rem; overflow: hidden; }
+.home-needs-texture { position: absolute; top: -34.4625rem; left: 50%; width: 125.0812rem; max-width: none; height: 83.4625rem; margin-left: -57.8875rem; opacity: 0.55; object-fit: cover; }
+.home-needs-link {
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  padding-top: 1.2094rem;
+  color: var(--blanc);
+  font-family: var(--codec);
+  white-space: nowrap;
+}
+.home-needs-pill { display: block; margin-right: 4.5187rem; padding: 0.3781rem 0.4938rem 0.3625rem 0.0331rem; border-radius: 1.2388rem; background-color: var(--brun-fonce); font-size: 4.1675rem; font-weight: 300; line-height: 4.1881rem; letter-spacing: var(--codec-interlettrage); }
+.home-needs-strong { display: block; margin-top: -0.4069rem; margin-right: 4.8875rem; font-size: 4.1656rem; font-weight: 400; line-height: 4.1869rem; letter-spacing: var(--codec-interlettrage); }
+
+/* ---------- Le cabinet ---------- */
+.home-firm { background-color: var(--taupe); padding-top: 6.2938rem; padding-bottom: 1.8813rem; font-kerning: none; }
+.home-firm-intro { width: 78rem; margin-left: 6.4375rem; padding-top: 1.1rem; padding-bottom: 1.4312rem; border-radius: 1.5rem; background-color: #d8c1a3; }
+.home-firm-intro-title {
+  width: 78rem;
+  margin-left: -0.075rem;
+  color: #563a1e;
+  font-family: var(--codec);
+  font-size: 2.7444rem;
+  font-weight: 300;
+  line-height: 2.75rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+.home-firm-strong { font-weight: 700; }
+.home-cards { display: flex; align-items: flex-start; margin-top: 4.4938rem; }
+
+/* Carte (Webflow : Div) : base 10 px, toutes les mesures internes en em */
+.home-card { width: 58.31em; height: 73.31em; flex: none; margin-left: 7.0438rem; border-radius: 1.4em; background-color: #92785d; font-size: 0.625rem; }
+.home-card.is-second { margin-left: 4.5062rem; }
+.home-card-title {
+  padding-top: 0.4355em;
+  padding-left: 0.4846em;
+  color: var(--blanc-casse);
+  font-family: var(--codec);
+  font-size: 3.467em;
+  font-weight: 400;
+  line-height: 1.0098;
+  letter-spacing: var(--codec-interlettrage);
+  text-transform: uppercase;
+}
+.home-card-title.is-right { padding-right: 0.5336em; padding-left: 0; text-align: right; }
+.home-card-rule { width: 54.94em; height: 1px; margin-top: 1.239em; margin-left: 1.69em; background-color: var(--blanc); }
+
+/* Notre offre : coches, textes, sous-listes à filet vertical */
+.home-offer-list { margin-top: 1.83em; margin-left: 3.33em; list-style: none; }
+.home-offer-item { display: flex; align-items: flex-start; margin-bottom: 2.72em; }
+.home-offer-check { display: block; width: 3.52em; height: 3.15em; flex: none; }
+.home-offer-content { width: 47.95em; margin-left: 1.33em; }
+.home-offer-text {
+  margin-top: 0.2653em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 2.299em;
+  font-weight: 400;
+  line-height: 1.0013;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: justify;
+}
+.home-offer-details { display: flex; align-items: flex-start; margin-top: 1.518em; margin-bottom: -1.85em; }
+.home-offer-details.is-second { margin-top: 1.354em; margin-bottom: 0; }
+.home-offer-details-line { width: 1px; height: 10.99em; flex: none; margin-top: 0.36em; margin-left: 3.57em; background-color: var(--blanc); }
+.home-offer-details-line.is-second { height: 9.88em; margin-top: -0.19em; }
+.home-offer-sublist {
+  margin-left: 0.4258em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 1.926em;
+  font-weight: 100;
+  line-height: 1.0021;
+  letter-spacing: var(--codec-interlettrage);
+  list-style: none;
+}
+.home-offer-sublist.is-tight { line-height: 0.986; }
+.home-offer-subitem { display: block; }
+.home-offer-subitem.is-strong { font-weight: 700; }
+
+/* Notre approche : chiffres (images) alignés en bas sur le texte */
+.home-approach-list { margin-left: 1.96em; list-style: none; }
+.home-approach-item { display: flex; align-items: flex-end; }
+.home-approach-figure { display: flex; width: 6.05em; flex: none; align-items: flex-start; justify-content: center; }
+.home-approach-number { display: block; flex: none; }
+.home-approach-number.is-1 { width: 3.86em; height: 7.14em; margin-top: 3.15em; margin-bottom: -0.17em; }
+.home-approach-number.is-2 { width: 5.39em; height: 6.27em; margin-top: 3.9em; margin-bottom: 0.34em; }
+.home-approach-number.is-3 { width: 5.31em; height: 6.28em; margin-top: 3.54em; margin-bottom: -0.24em; }
+.home-approach-number.is-4 { width: 6.05em; height: 6.18em; margin-top: 4.14em; margin-bottom: -0.67em; }
+.home-approach-number.is-5 { width: 5.45em; height: 6.45em; margin-top: 4.44em; margin-bottom: -0.31em; }
+.home-approach-number.is-6 { width: 5.5em; height: 6.4em; margin-top: 3.68em; margin-bottom: -0.35em; }
+.home-approach-text {
+  margin-left: 0.4045em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 2.299em;
+  font-weight: 400;
+  line-height: 1.0013;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+
+.home-firm-closing {
+  width: 85.375rem;
+  margin-top: 6.45rem;
+  margin-left: 2.2375rem;
+  color: #563a1e;
+  font-family: var(--codec);
+  font-size: 2.7419rem;
+  font-weight: 300;
+  line-height: 2.75rem;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: center;
+}
+/* Liens vers les parties de la page Le cabinet, précédés d'un tiret */
+.home-firm-links { display: flex; flex-direction: column; align-items: flex-start; row-gap: 0.3688rem; margin-top: 6.425rem; margin-left: 65.4437rem; }
+.home-firm-link { display: flex; align-items: flex-start; }
+.home-firm-link-dash { display: block; width: 2.5875rem; height: 1px; flex: none; margin-top: 0.75rem; background-color: var(--blanc); }
+.home-firm-link-text { display: block; margin-left: 0.5437rem; color: var(--blanc); font-family: var(--codec); font-size: 1.2119rem; font-weight: 300; line-height: 1.2325rem; letter-spacing: var(--codec-interlettrage); white-space: nowrap; }
+
+/* =========================================================
+   Mobile (mise en page recomposée par Canva, relevée à 390 px)
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  .home-hero { height: 35.6625rem; }
+  .home-hero-photo { top: -3.2125rem; width: 67.6312rem; height: 45.0875rem; margin-left: -31.25rem; }
+  .home-hero-logo { padding-top: 0.9rem; }
+  .home-hero-rule { width: 22.425rem; margin-top: 0.9688rem; margin-left: 0.975rem; }
+  .home-hero-title { margin-top: 2.6688rem; margin-left: 2.5875rem; font-size: 2.8563rem; line-height: 2.8994rem; }
+  .home-hero-title-line.is-second { margin-top: -0.1681rem; margin-left: 0.0312rem; }
+  .home-hero-title-line.is-strong { margin-top: -0.3306rem; }
+  .home-hero-subtitle { margin-top: 2.0881rem; margin-left: 2.5875rem; font-size: 1.6106rem; line-height: 1.6106rem; }
+  .home-hero-actions { margin-top: 1.085rem; }
+  .home-hero-button { width: 11.4437rem; height: 2.85rem; margin-top: 0.875rem; margin-left: 1.2937rem; border-radius: 0.5rem; font-size: 0.9331rem; line-height: 1.2994rem; }
+  .home-hero-mark { margin-left: 7.3438rem; }
+  .home-hero-mark-letter { width: 2.6875rem; font-size: 5.3531rem; line-height: 7.4625rem; }
+  .home-hero-mark-dot { width: 0.5125rem; height: 0.5125rem; margin-top: 4.5938rem; }
+
+  .home-band { height: 15.1312rem; }
+  .home-band-texture { top: -28.525rem; width: 100.125rem; height: 66.8125rem; margin-left: -56.1437rem; }
+  .home-band-title { width: 22.425rem; margin-left: -0.5625rem; padding-top: 2.325rem; font-size: 3.3294rem; line-height: 3.3963rem; }
+
+  .home-profiles { padding-top: 2.625rem; }
+  .home-profiles-grid { grid-template-columns: 1fr; row-gap: 0.9688rem; padding-left: 0; }
+  .home-profile.is-lancement { width: 18.7063rem; margin-left: 3.2062rem; }
+  .home-profile.is-structuration { width: 18.5688rem; margin-left: 3.1rem; }
+  .home-profile.is-essor { width: 18.4625rem; margin-left: 3.3125rem; }
+  .home-profile.is-transition { width: 18.4375rem; margin-top: 0.1125rem; margin-left: 3.2rem; }
+  .home-profile.is-litige { width: 18.475rem; margin-left: 2.8875rem; }
+  .home-profile.is-difficulte { width: 18.2688rem; margin-left: 2.7625rem; }
+  .home-profile-visual { height: 24.285rem; margin-bottom: 0.9688rem; }
+  .home-profile-visual.is-lancement { width: 18.4187rem; margin-left: 0; }
+  .home-profile-visual.is-structuration { width: 18.5688rem; }
+  .home-profile-visual.is-essor { width: 18.5562rem; margin-left: 0; margin-bottom: 0.9688rem; }
+  .home-profile-visual.is-transition { width: 18.6125rem; margin-bottom: 0.9688rem; }
+  .home-profile-visual.is-litige { width: 18.5562rem; margin-left: 0.0437rem; margin-bottom: 0.9688rem; }
+  .home-profile-visual.is-difficulte { width: 18.5312rem; height: 24.1625rem; margin-bottom: 0.9688rem; }
+  .home-profile-image.is-lancement { width: 24.285rem; height: 24.285rem; margin-left: -3.35rem; }
+  .home-profile-image.is-structuration { width: 24.285rem; height: 24.285rem; margin-left: -1.9rem; }
+  .home-profile-image.is-essor { width: 25.8062rem; height: 25.8062rem; margin-left: -2.485rem; }
+  .home-profile-image.is-transition { width: 25.15rem; height: 25.15rem; margin-top: -0.4313rem; margin-left: -1.7rem; }
+  .home-profile-image.is-litige { width: 25.875rem; height: 25.875rem; margin-top: -0.7937rem; }
+  .home-profile-image.is-difficulte { width: 29.925rem; height: 29.925rem; margin-top: -5.0563rem; margin-left: -11.3938rem; }
+  .home-profile-label { top: 10.1rem; font-size: 1.8438rem; line-height: 1.85rem; }
+  .home-profile-label.is-lancement { top: 10.2438rem; font-size: 1.8269rem; }
+  .home-profile-label.is-difficulte { top: 9.9625rem; font-size: 1.8313rem; }
+  .home-profile-label-line { margin-right: 0.175rem; }
+  .home-profile-label-line.is-transition { margin-right: 0.375rem; }
+  .home-profile-pill-row { margin-top: -0.12rem; }
+  .home-profile-pill { margin-left: 0.04rem; padding: 0.2rem 0.27rem 0.2rem 0.17rem; border-radius: 0.5675rem; }
+  .home-profile-pill.is-lancement { margin-left: 0.3331rem; }
+  .home-profile-pill.is-structuration { padding: 0.225rem 0.3588rem 0.225rem 0.2587rem; border-radius: 0.59rem; }
+  .home-profile-pill.is-litige { margin-left: 0.2687rem; }
+  .home-profile-pill.is-difficulte { margin-left: 0.19rem; }
+  .home-profile-item { padding-top: 0.9812rem; padding-bottom: 1.1438rem; }
+  .home-profile-item.is-compact { padding-top: 0.9313rem; padding-bottom: 1.0813rem; }
+  .home-profile-link { font-size: 1.3331rem; line-height: 1.35rem; }
+  .home-profile-link.is-indent { margin-left: 0.0875rem; }
+  .home-profile-link.is-compact { margin-right: -0.0563rem; margin-left: -0.05rem; font-size: 1.2375rem; line-height: 1.2531rem; }
+
+  .home-top-link { width: 1.875rem; height: 1.8062rem; margin-top: 1.075rem; margin-left: 20.4875rem; }
+  .home-top-link.is-firm { margin-top: 1.4912rem; margin-left: 21.0125rem; }
+
+  .home-needs { height: 7.2875rem; margin-top: 1.0125rem; }
+  .home-needs-texture { top: -27.5625rem; width: 100.0438rem; height: 66.7562rem; margin-left: -46.3rem; }
+  .home-needs-link { padding-top: 0.99rem; }
+  .home-needs-pill { margin-right: 3.3438rem; padding: 0.2387rem 0.3113rem 0.2288rem 0.0206rem; border-radius: 0.7812rem; font-size: 2.6281rem; line-height: 2.6412rem; }
+  .home-needs-strong { margin-top: -0.255rem; margin-right: 3.575rem; font-size: 2.6269rem; line-height: 2.64rem; }
+
+  .home-firm { padding-top: 5.0312rem; padding-bottom: 1.4937rem; }
+  .home-firm-intro { width: 22.425rem; margin-left: 0.975rem; padding: 0.8812rem 1.0312rem 1.0688rem 0.9187rem; border-radius: 1.1875rem; }
+  .home-firm-intro-title { width: 20.475rem; margin-left: 0; font-size: 2.1925rem; line-height: 2.1975rem; }
+  .home-cards { flex-direction: column; margin-top: 1.4rem; }
+  .home-card { margin-left: 0.975rem; font-size: 0.3827rem; }
+  .home-card.is-second { margin-top: 1.1844rem; margin-left: 1.0813rem; }
+  .home-firm-closing { width: 22.425rem; margin-top: 1.8875rem; margin-left: 0.9187rem; font-size: 2.1906rem; line-height: 2.1975rem; }
+  .home-firm-links { row-gap: 0.295rem; margin-top: 2.35rem; margin-left: 5.6063rem; }
+  .home-firm-link-dash { width: 2.0688rem; margin-top: 0.5938rem; }
+  .home-firm-link-text { margin-left: 0.4375rem; font-size: 0.9694rem; line-height: 0.9862rem; }
+}
+
+/* Au-delà de 1440 px, Canva agrandit la photo de l'en-tête avec la largeur de l'écran (elle couvre toute la largeur, la hauteur de la section ne change pas).
+   Mêmes proportions qu'à 1440 px, exprimées en vw. Webflow : point de rupture 1440 px et plus. */
+@media screen and (min-width: 1440px) {
+  .home-hero-photo { top: -6.9306vw; left: -2.4444vw; width: 113.5vw; height: 75.6667vw; margin-left: 0; }
+}

@@ -1,0 +1,291 @@
+/* =========================================================
+   Page « Vos besoins • Notre expertise » (site actuel, Canva)
+   Préfixe des classes : besoins-
+   Mesures relevées sur ricau-avocat.fr/vos-besoins--notre-expertise :
+   ordinateur 1440 px, mobile 390 px (@media max-width 991px).
+   Les écarts de quelques pixels d'une étape à l'autre viennent du
+   design Canva ; ils sont gardés par des classes combinées
+   (is-lancement, is-structuration, is-essor, is-transition,
+   is-litige, is-difficulte).
+   ========================================================= */
+
+/* ---------- En-tête (Webflow : Section) ----------
+   Canva réduit tout ce bloc d'un seul tenant sur mobile (1366 px → 390 px) :
+   le cadre est écrit en em sur une base de 100 px au bureau ; seule cette base change sur mobile. */
+/* Canva n'applique pas le crénage (kerning) : font-kerning: none sur chaque section (propriété héritée) */
+.besoins-hero { position: relative; height: 48.625rem; overflow: hidden; background-color: #bfac93; font-kerning: none; }
+/* Cadre de 1366 px centré : la vidéo et la texture ne vont pas jusqu'aux bords à 1440 px */
+.besoins-hero-frame { position: relative; width: 13.66em; height: 7.78em; margin-right: auto; margin-left: auto; font-size: 6.25rem; }
+
+/* Bande vidéo du haut (Webflow : Div Block + Background Video) */
+.besoins-hero-top { position: relative; display: flex; align-items: flex-start; height: 4.39em; overflow: hidden; }
+.besoins-hero-video { position: absolute; top: -1.896em; left: -0.308em; width: 14.553em; max-width: none; height: 8.18606em; object-fit: cover; }
+/* Image d'attente de la vidéo : affichée à sa place sur mobile, comme sur le site actuel */
+.besoins-hero-poster { position: absolute; top: -1.896em; left: -0.308em; display: none; width: 14.553em; max-width: none; height: 8.18606em; object-fit: cover; }
+
+/* Accroche « Partenaire des entrepreneurs en mouvement. » */
+.besoins-hero-tagline { position: relative; flex: none; width: 6.554em; margin-left: 0.779em; padding-top: 0.77em; }
+.besoins-hero-tagline-text {
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 0.8828em;
+  font-weight: 300;
+  line-height: 1.01971em;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.besoins-hero-tagline-text.is-strong { margin-top: -0.14092em; font-weight: 400; }
+
+/* Colonne de droite : « Droit des affaires / Conseil & contentieux » et monogramme « a. » */
+.besoins-hero-side { position: relative; flex: none; width: 6.062em; padding-top: 0.249em; }
+.besoins-hero-specialty {
+  color: var(--creme-chaud);
+  font-family: var(--codec);
+  font-size: 0.4268em;
+  font-weight: 300;
+  line-height: 1.00773em;
+  letter-spacing: var(--codec-interlettrage);
+  text-align: right;
+  white-space: nowrap;
+}
+.besoins-hero-specialty.is-thin { margin-top: 0.18018em; font-weight: 100; }
+.besoins-hero-monogram { position: relative; width: 1.108em; height: 2.37em; margin-top: 1.4039em; margin-left: 5.202em; }
+.besoins-hero-monogram-letter {
+  display: block;
+  color: var(--blanc);
+  font-family: var(--dream);
+  font-size: 1.6955em;
+  font-weight: 400;
+  line-height: 1.39027em;
+  letter-spacing: -0.017em;
+}
+/* Point beige du monogramme, posé sur la vidéo */
+.besoins-hero-monogram-dot { position: absolute; top: 1.466em; left: 0.862em; width: 0.165em; height: 0.164em; border-radius: 50%; background-color: var(--beige-logo); }
+
+/* Bande texturée du bas (texture Canva « mur beige », opacité 55 % sur le fond taupe) */
+.besoins-hero-bottom { position: relative; height: 3.39em; overflow: hidden; }
+.besoins-hero-texture { position: absolute; top: -5.225em; left: -2.443em; width: 20.037em; max-width: none; height: 13.37em; opacity: 0.55; }
+.besoins-hero-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.67363em;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 0.8907em;
+  font-weight: 300;
+  line-height: 1.01044em;
+  letter-spacing: var(--codec-interlettrage);
+}
+/* « Vos besoins. » sur sa pastille brune */
+.besoins-hero-pill { display: block; width: 5.4227em; height: 1.2406em; margin-left: 4.91299em; padding-top: 0.12799em; padding-right: 0.054em; border-radius: 0.31077em; background-color: var(--brun-fonce); text-align: center; white-space: nowrap; }
+.besoins-hero-line { display: block; width: 15.32166em; margin-top: -0.03368em; margin-left: -0.03144em; font-weight: 400; text-align: center; white-space: nowrap; }
+
+/* =========================================================
+   Étapes « Entrepreneurs en … » (Webflow : Section avec ancre)
+   ========================================================= */
+/* scroll-margin-top : l'ancre (#lancement…) s'arrête sous la barre de navigation de 50 px */
+.besoins-step { position: relative; scroll-margin-top: 3.125rem; background-color: #ecdac1; font-kerning: none; }
+.besoins-step.is-lancement { height: 75rem; }
+.besoins-step.is-structuration { height: 98.3125rem; background-color: #d8c1a3; }
+.besoins-step.is-essor { height: 81.0625rem; }
+.besoins-step.is-transition { height: 90.625rem; background-color: #d8c1a3; }
+.besoins-step.is-litige { height: 99.3125rem; }
+.besoins-step.is-difficulte { height: 89.6875rem; background-color: #d8c1a3; }
+
+/* Vignette + devise côte à côte */
+.besoins-step-top { display: flex; align-items: flex-start; }
+
+/* Vignette photo (Webflow : Div Block qui recadre l'élément Image) */
+.besoins-vignette { position: relative; flex: none; width: 33.9562rem; height: 48rem; margin-left: 9.0437rem; overflow: hidden; }
+.besoins-vignette.is-lancement { width: 33.1063rem; height: 46.75rem; margin-left: 9.8938rem; }
+.besoins-vignette.is-difficulte { width: 34.2313rem; margin-left: 8.7688rem; }
+/* Photo à la taille et au cadrage Canva (plus grande que la vignette) */
+.besoins-vignette-image { display: block; width: 48rem; max-width: none; height: 48rem; object-fit: cover; }
+.besoins-vignette-image.is-lancement { width: 49.5625rem; height: 49.5625rem; margin-top: -1.4rem; margin-left: -8.125rem; }
+.besoins-vignette-image.is-structuration { margin-left: -5.15rem; opacity: 0.5; }
+.besoins-vignette-image.is-essor { width: 48.1313rem; height: 48.1313rem; margin-left: -5.1188rem; }
+.besoins-vignette-image.is-transition { width: 48.8188rem; height: 48.8188rem; margin-top: -0.4062rem; margin-left: -5.5062rem; }
+.besoins-vignette-image.is-litige { margin-left: -0.2562rem; }
+.besoins-vignette-image.is-difficulte { width: 56.15rem; height: 56.15rem; margin-top: -8.15rem; margin-left: -21.675rem; }
+
+/* Étiquette « Entrepreneurs / en … » posée sur la photo */
+.besoins-label {
+  position: absolute;
+  top: 19.7688rem;
+  right: 0;
+  left: 0;
+  color: var(--blanc);
+  font-family: var(--codec);
+  font-size: 3.6375rem;
+  font-weight: 300;
+  line-height: 3.6856rem;
+  letter-spacing: var(--codec-interlettrage);
+  white-space: nowrap;
+}
+.besoins-label.is-lancement { top: 19.7312rem; font-size: 3.5162rem; line-height: 3.5631rem; }
+.besoins-label.is-structuration { top: 19.925rem; font-size: 3.6519rem; line-height: 3.7rem; }
+/* Ligne « Entrepreneurs » centrée sur la photo, décalée comme dans Canva */
+.besoins-label-line { display: block; margin-right: 0.1187rem; margin-left: -0.1187rem; text-align: center; }
+.besoins-label-line.is-lancement { margin-right: 0.2531rem; margin-left: -0.2531rem; }
+.besoins-label-line.is-structuration { margin-right: 0.2125rem; margin-left: -0.2125rem; }
+.besoins-label-line.is-transition { margin-right: 0.2969rem; margin-left: -0.2969rem; }
+.besoins-label-line.is-difficulte { margin-right: 0.2406rem; margin-left: -0.2406rem; }
+/* Pastille brune de la deuxième ligne (largeur de Canva, texte recentré sur l'encre) */
+.besoins-label-pill {
+  display: block;
+  height: 4.4938rem;
+  margin-top: -0.2606rem;
+  padding-top: 0.4688rem;
+  padding-right: 0.054em;
+  border-radius: 1.125rem;
+  background-color: var(--brun-fonce);
+  text-align: center;
+}
+.besoins-label-pill.is-lancement { width: 22.025rem; height: 4.5rem; margin-top: -0.3194rem; margin-left: 5.6188rem; padding-top: 0.525rem; border-radius: 1.1219rem; }
+.besoins-label-pill.is-structuration { width: 25.9375rem; height: 4.6625rem; margin-top: -0.3494rem; margin-left: 4.0125rem; padding-top: 0.5563rem; border-radius: 1.1731rem; }
+.besoins-label-pill.is-essor { width: 13.55rem; margin-left: 10.4187rem; }
+.besoins-label-pill.is-transition { width: 20.1562rem; margin-left: 6.9437rem; }
+.besoins-label-pill.is-litige { width: 12.6875rem; margin-left: 10.8562rem; }
+.besoins-label-pill.is-difficulte { width: 18.5437rem; margin-left: 7.95rem; }
+
+/* Devise (« Créer. Se lancer. Oser. ») : en Dream Avenue sur le site actuel, ici en Cormorant Garamond (police libre) */
+.besoins-motto {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  row-gap: 1.025rem;
+  width: 37.625rem;
+  margin-top: 14.5375rem;
+  margin-left: 0.025rem;
+  color: var(--brun-fonce);
+  font-family: var(--dream);
+  font-size: 5.5644rem;
+  font-weight: 400;
+  line-height: 5.625rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+.besoins-motto.is-lancement { row-gap: 0.9925rem; width: 38.5rem; margin-top: 14.3562rem; margin-left: 0; font-size: 5.4238rem; line-height: 5.4825rem; }
+.besoins-motto-line { text-align: center; white-space: nowrap; }
+/* Dans Canva, la première ligne est 3,5 px plus à gauche que les deux autres */
+.besoins-motto-line.is-first { margin-right: 0.2188rem; margin-left: -0.2188rem; }
+
+/* Boutons brun foncé vers les pages de service (Webflow : Link Block) */
+.besoins-buttons { display: flex; flex-direction: column; align-items: flex-start; row-gap: 1.5656rem; margin-top: 3.05rem; margin-left: 23.5063rem; }
+.besoins-buttons.is-lancement { margin-top: 4.3rem; }
+.besoins-button {
+  display: flex;
+  width: 49.5375rem;
+  height: 7.4688rem;
+  align-items: center;
+  padding-left: 2.4937rem;
+  border-radius: 0.9062rem;
+  background-color: var(--brun-fonce);
+  color: var(--creme);
+  font-family: var(--codec);
+  font-size: 2.1412rem;
+  font-weight: 400;
+  line-height: 2.125rem;
+  letter-spacing: var(--codec-interlettrage);
+}
+/* Retraits du texte différents selon les boutons dans Canva */
+.besoins-button.is-retrait-36 { padding-left: 2.2563rem; }
+.besoins-button.is-retrait-30 { padding-left: 1.8687rem; }
+.besoins-button.is-retrait-43 { padding-left: 2.6875rem; }
+.besoins-button.is-retrait-38 { padding-left: 2.3563rem; }
+/* Dernier bouton « en litige » : écart un peu plus grand dans Canva */
+.besoins-button.is-ecart { margin-top: 0.1031rem; }
+/* Texte du bouton, remonté de 1,8 px comme sur le site */
+.besoins-button-text { display: block; margin-bottom: 0.225rem; white-space: nowrap; }
+/* Quelques textes sont placés plus haut ou plus bas dans Canva */
+.besoins-button-text.is-haut { margin-bottom: 0.475rem; }
+.besoins-button-text.is-bas { margin-bottom: -0.025rem; }
+.besoins-button-text.is-plus-bas { margin-bottom: -0.275rem; }
+/* Sous-titre fin : l'interlettrage en em se recalcule sur sa propre taille */
+.besoins-button-sub { display: block; font-size: 1.8906rem; font-weight: 100; line-height: 1.875rem; letter-spacing: var(--codec-interlettrage); }
+.besoins-button-light { font-weight: 100; }
+.besoins-button-arrow { flex: none; width: 1.5813rem; height: 1.6187rem; margin-right: 1.8562rem; margin-left: auto; }
+
+/* Icône « retour » (renvoie à la première étape, comme sur le site actuel) */
+.besoins-top-link { display: block; width: 2.3438rem; height: 2.2625rem; margin-left: 80.7375rem; }
+.besoins-top-link.is-lancement { margin-top: 3.3rem; margin-left: 80.4125rem; }
+.besoins-top-icon { width: 100%; height: 100%; }
+
+/* =========================================================
+   Mobile (mesures relevées à 390 px)
+   ========================================================= */
+@media screen and (max-width: 991px) {
+  /* En-tête : même bloc réduit à 390 / 1366, la vidéo laisse place à son image d'attente */
+  .besoins-hero { height: 13.8375rem; }
+  .besoins-hero-frame { font-size: 1.7844rem; }
+  .besoins-hero-video { display: none; }
+  .besoins-hero-poster { display: block; }
+
+  .besoins-step.is-lancement { height: 68.575rem; }
+  .besoins-step.is-structuration { height: 81.5rem; }
+  .besoins-step.is-essor { height: 73.6937rem; }
+  .besoins-step.is-transition { height: 76.5125rem; }
+  .besoins-step.is-litige { height: 82.3063rem; }
+  .besoins-step.is-difficulte { height: 75.5938rem; }
+
+  /* Vignette en haut, devise en dessous */
+  .besoins-step-top { flex-direction: column; align-items: stretch; }
+  .besoins-vignette { width: 22.425rem; height: 38.275rem; margin-left: 0.975rem; }
+  .besoins-vignette.is-lancement { width: 22.425rem; height: 37.35rem; margin-left: 0.975rem; }
+  .besoins-vignette.is-difficulte { width: 22.425rem; margin-left: 0.975rem; }
+  .besoins-vignette-image { width: 38.3937rem; height: 38.3937rem; }
+  .besoins-vignette-image.is-lancement { width: 39.6375rem; height: 39.6375rem; margin-top: 0; margin-left: -9.2875rem; }
+  .besoins-vignette-image.is-structuration { margin-left: -6.4688rem; }
+  .besoins-vignette-image.is-essor { width: 38.4937rem; height: 38.4937rem; margin-left: -6.4437rem; }
+  .besoins-vignette-image.is-transition { width: 39.0438rem; height: 39.0438rem; margin-top: -0.3312rem; margin-left: -6.7562rem; }
+  .besoins-vignette-image.is-litige { margin-left: -2.5562rem; }
+  .besoins-vignette-image.is-difficulte { width: 44.9125rem; height: 44.9125rem; margin-top: -6.5187rem; margin-left: -19.7937rem; }
+
+  .besoins-label { top: 15.9125rem; font-size: 2.8669rem; line-height: 2.905rem; }
+  .besoins-label.is-lancement { top: 15.7812rem; font-size: 2.8125rem; line-height: 2.85rem; }
+  .besoins-label.is-structuration { top: 16rem; font-size: 2.8625rem; line-height: 2.9006rem; }
+  .besoins-label-line { margin-right: 0.075rem; margin-left: -0.075rem; }
+  .besoins-label-line.is-lancement { margin-right: 0.0813rem; margin-left: -0.0813rem; }
+  .besoins-label-line.is-structuration { margin-right: 0.0969rem; margin-left: -0.0969rem; }
+  .besoins-label-line.is-transition { margin-right: 0.0813rem; margin-left: -0.0813rem; }
+  .besoins-label-line.is-difficulte { margin-right: 0.075rem; margin-left: -0.075rem; }
+  .besoins-label-pill { height: 3.5375rem; margin-top: -0.3294rem; padding-top: 0.4125rem; border-radius: 0.8875rem; }
+  .besoins-label-pill.is-lancement { width: 17.6187rem; height: 3.5562rem; margin-top: -0.2562rem; margin-left: 2.575rem; padding-top: 0.3688rem; border-radius: 0.9rem; }
+  .besoins-label-pill.is-structuration { width: 20.3125rem; height: 3.6562rem; margin-top: -0.3438rem; margin-left: 1.1187rem; padding-top: 0.4562rem; border-radius: 0.9187rem; }
+  .besoins-label-pill.is-essor { width: 10.6562rem; margin-left: 6.0875rem; }
+  .besoins-label-pill.is-transition { width: 15.875rem; margin-left: 3.4625rem; }
+  .besoins-label-pill.is-litige { width: 9.9688rem; margin-left: 6.4313rem; }
+  .besoins-label-pill.is-difficulte { width: 14.5938rem; height: 3.5562rem; margin-left: 4.1188rem; }
+
+  /* Devise : taille propre à chaque étape dans Canva ; le léger décalage du centre se règle par un retrait (padding) */
+  .besoins-motto { row-gap: 0.8037rem; width: auto; margin-top: 2.25rem; margin-left: 0; padding-left: 0.1rem; font-size: 4.37rem; line-height: 4.4181rem; }
+  .besoins-motto.is-lancement { row-gap: 0.7931rem; width: auto; margin-top: 2.2938rem; padding-right: 0.2313rem; padding-left: 0; font-size: 4.3381rem; line-height: 4.385rem; }
+  .besoins-motto.is-structuration { row-gap: 0.8163rem; margin-top: 2.2375rem; padding-right: 0.2437rem; padding-left: 0; font-size: 4.4506rem; line-height: 4.4994rem; }
+  .besoins-motto.is-transition { row-gap: 0.725rem; margin-top: 2.125rem; padding-right: 0.0938rem; padding-left: 0; font-size: 3.9444rem; line-height: 3.9875rem; }
+  .besoins-motto.is-litige { row-gap: 0.8194rem; margin-top: 2.275rem; padding-right: 0.2437rem; padding-left: 0; font-size: 4.4506rem; line-height: 4.4994rem; }
+  .besoins-motto.is-difficulte { row-gap: 0.7188rem; margin-top: 2.1125rem; padding-right: 0.2062rem; padding-left: 0; font-size: 3.9013rem; line-height: 3.9438rem; }
+  .besoins-motto-line.is-first { margin-right: 0.1625rem; margin-left: -0.1625rem; }
+
+  .besoins-buttons { row-gap: 0.7094rem; margin-top: 2.2069rem; margin-left: 0.975rem; }
+  .besoins-buttons.is-lancement { margin-top: 2.4463rem; }
+  .besoins-buttons.is-structuration { margin-top: 2.2256rem; }
+  .besoins-buttons.is-transition { margin-top: 2.0875rem; }
+  .besoins-buttons.is-litige { margin-top: 2.2256rem; }
+  .besoins-buttons.is-difficulte { margin-top: 2.0688rem; }
+  .besoins-button { width: 22.425rem; height: 3.3813rem; padding-left: 1.1313rem; border-radius: 0.4125rem; font-size: 0.9694rem; line-height: 0.9619rem; }
+  .besoins-button.is-retrait-36 { padding-left: 1.025rem; }
+  .besoins-button.is-retrait-30 { padding-left: 0.85rem; }
+  .besoins-button.is-retrait-43 { padding-left: 1.2188rem; }
+  .besoins-button.is-retrait-38 { padding-left: 1.0688rem; }
+  .besoins-button.is-ecart { margin-top: 0.0469rem; }
+  .besoins-button-text { margin-bottom: -0.0063rem; }
+  .besoins-button-text.is-haut { margin-bottom: 0.1rem; }
+  .besoins-button-text.is-bas { margin-bottom: -0.0719rem; }
+  .besoins-button-text.is-plus-bas { margin-bottom: -0.275rem; }
+  .besoins-button-sub { font-size: 0.8562rem; line-height: 0.8488rem; }
+  .besoins-button-arrow { width: 0.7125rem; height: 0.7312rem; margin-right: 0.8375rem; }
+
+  .besoins-top-link { width: 1.875rem; height: 1.8062rem; margin-top: 0.975rem; margin-left: 20.4rem; }
+  .besoins-top-link.is-lancement { margin-top: 0.975rem; margin-left: 20.3188rem; }
+}
