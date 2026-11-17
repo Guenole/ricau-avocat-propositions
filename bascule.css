@@ -9,3 +9,4 @@ a.cmp-segment:focus-visible { outline: 2px solid #f3ece4; outline-offset: 2px; }
 .cmp-message[hidden] { display: none; }
 .cmp-message a { color: #ffffff; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
 @media print { .cmp-bascule, .cmp-message { display: none; } }
+@media (max-width: 640px) { .cmp-bascule { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 60px); } .cmp-message { bottom: calc(max(16px, env(safe-area-inset-bottom)) + 112px); } } /* au-dessus des boutons de l outil de remarques */
